@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <!-- 引入 application.yml -->
+    <properties resource="application.yml" />
+
+    <!-- MyBatis3Simple：不生成 Example相关类及方法 -->
+    <context id="Mysql" targetRuntime="MyBatis3" defaultModelType="flat">
+        <property name="beginningDelimiter" value="`" />
+        <property name="endingDelimiter" value="`" />
+
+
+        <!-- 指定生成 Mapper 的继承模板 -->
+        <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
+            <property name="mappers" value="com.lzc.teachingInteraction.utils.IBaseMapper" />
+        </plugin>
+
+        <!-- 生成 JavaBean 对象重写 toString方法 -->
+        <plugin type="org.mybatis.generator.plugins.ToStringPlugin" />
+
+        <!-- 生成 JavaBean 对象继承 Serializable 类 -->
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin" />
+
+        <!-- 生成 JavaBean 对象重写 equals 和 hashCode 方法 -->
+        <!-- <plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin" /> -->
+
+        <!-- jdbc 连接配置 -->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://192.168.134.1:3306/graduation?characterEncoding=utf-8"
+                        userId="root"
+                        password="123456">
+        </jdbcConnection>
+
+        <javaModelGenerator targetPackage="com.lzc.teachingInteraction.entity"
+                            targetProject="src/main/java" />
+
+        <sqlMapGenerator targetPackage="com.lzc.teachingInteraction.mapper"
+                         targetProject="src/main/java" />
+
+        <javaClientGenerator targetPackage="com.lzc.teachingInteraction.mapper"
+                             targetProject="src/main/java" type="XMLMAPPER" />
+
+        <!-- Mysql 配置 -->
+        <!-- <generatedKey column="id" sqlStatement="Mysql" identity="true" /> -->
+        <!-- Oracle 配置 -->
+        <!-- <generatedKey column="id" sqlStatement="select SEQ_{1}.nextval from dual" identity="false" type="pre"/> -->
+
+        <!-- tableName：数据库表名，domainObjectName：生成文件名 ，schema：数据源-->
+
+        <table tableName="user" domainObjectName="User">
+
+            <!--<generatedKey column="c_id" sqlStatement="Mysql" identity="true" />-->
+        </table>
+        <table tableName="teacher" domainObjectName="Teacher">
+
+            <!--<generatedKey column="c_id" sqlStatement="Mysql" identity="true" />-->
+        </table>
+        <table tableName="student" domainObjectName="Student">
+
+            <!--<generatedKey column="c_id" sqlStatement="Mysql" identity="true" />-->
+        </table>
+        <table tableName="admin" domainObjectName="Admin">
+
+            <!--<generatedKey column="c_id" sqlStatement="Mysql" identity="true" />-->
+        </table>
+        <table tableName="subject" domainObjectName="Subject">
+
+            <!--<generatedKey column="c_id" sqlStatement="Mysql" identity="true" />-->
+        </table>
+        <table tableName="course" domainObjectName="Course">
+
+            <!--<generatedKey column="c_id" sqlStatement="Mysql" identity="true" />-->
+        </table>
+        <table tableName="notice" domainObjectName="Notice">
+
+            <!--<generatedKey column="c_id" sqlStatement="Mysql" identity="true" />-->
+        </table>
+        <table tableName="material" domainObjectName="Material">
+
+            <!--<generatedKey column="c_id" sqlStatement="Mysql" identity="true" />-->
+        </table>
+        <table tableName="student_subject">
+
+            <!--<generatedKey column="c_id" sqlStatement="Mysql" identity="true" />-->
+        </table>
+        <table tableName="student_material">
+
+            <!--<generatedKey column="c_id" sqlStatement="Mysql" identity="true" />-->
+        </table>
+        <table tableName="course_student">
+
+            <!--<generatedKey column="c_id" sqlStatement="Mysql" identity="true" />-->
+        </table>
+        <!--<table tableName="review" domainObjectName="Review">-->
+
+            <!--&lt;!&ndash;<generatedKey column="c_id" sqlStatement="Mysql" identity="true" />&ndash;&gt;-->
+        <!--</table>-->
+        <!--<table tableName="role" domainObjectName="Role">-->
+
+            <!--&lt;!&ndash;<generatedKey column="c_id" sqlStatement="Mysql" identity="true" />&ndash;&gt;-->
+        <!--</table>-->
+        <!--<table tableName="role_permission" domainObjectName="RolePermission">-->
+
+            <!--&lt;!&ndash;<generatedKey column="c_id" sqlStatement="Mysql" identity="true" />&ndash;&gt;-->
+        <!--</table>-->
+        <!--<table tableName="user" domainObjectName="User">-->
+
+            <!--&lt;!&ndash;<generatedKey column="c_id" sqlStatement="Mysql" identity="true" />&ndash;&gt;-->
+        <!--</table>-->
+        <!--<table tableName="user_role" domainObjectName="UserRole">-->
+
+            <!--&lt;!&ndash;<generatedKey column="c_id" sqlStatement="Mysql" identity="true" />&ndash;&gt;-->
+        <!--</table>-->
+
+
+
+        <!--<table tableName="web_classes"-->
+               <!--domainObjectName="WebClass"-->
+               <!--enableCountByExample="true"-->
+               <!--enableUpdateByExample="true"-->
+               <!--enableDeleteByExample="true"-->
+               <!--enableSelectByExample="true"-->
+               <!--selectByExampleQueryId="true"/>-->
+    </context>
+</generatorConfiguration>
