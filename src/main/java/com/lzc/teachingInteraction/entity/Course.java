@@ -11,7 +11,8 @@ public class Course implements Serializable {
     @Column(name = "t_id")
     private String tId;
 
-    private String name;
+    @Column(name = "ad_name")
+    private String adName;
 
     private String detail;
 
@@ -22,6 +23,9 @@ public class Course implements Serializable {
     private Integer utime;
 
     private Integer chance;
+
+    @Column(name = "c_logoUrl")
+    private String cLogourl;
 
     private static final long serialVersionUID = 1L;
 
@@ -54,17 +58,17 @@ public class Course implements Serializable {
     }
 
     /**
-     * @return name
+     * @return ad_name
      */
-    public String getName() {
-        return name;
+    public String getAdName() {
+        return adName;
     }
 
     /**
-     * @param name
+     * @param adName
      */
-    public void setName(String name) {
-        this.name = name;
+    public void setAdName(String adName) {
+        this.adName = adName;
     }
 
     /**
@@ -123,6 +127,20 @@ public class Course implements Serializable {
         this.chance = chance;
     }
 
+    /**
+     * @return c_logoUrl
+     */
+    public String getcLogourl() {
+        return cLogourl;
+    }
+
+    /**
+     * @param cLogourl
+     */
+    public void setcLogourl(String cLogourl) {
+        this.cLogourl = cLogourl;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -131,11 +149,12 @@ public class Course implements Serializable {
         sb.append("Hash = ").append(hashCode());
         sb.append(", cId=").append(cId);
         sb.append(", tId=").append(tId);
-        sb.append(", name=").append(name);
+        sb.append(", adName=").append(adName);
         sb.append(", detail=").append(detail);
         sb.append(", ctime=").append(ctime);
         sb.append(", utime=").append(utime);
         sb.append(", chance=").append(chance);
+        sb.append(", cLogourl=").append(cLogourl);
         sb.append("]");
         return sb.toString();
     }

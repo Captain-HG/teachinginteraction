@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.lzc.teachingInteraction.mapper.CourseMapper">
-  <resultMap id="BaseResultMap" type="com.lzc.teachingInteraction.entity.Course">
+<mapper namespace="com.lzc.teachingInteraction.mapper.AdviseMapper">
+  <resultMap id="BaseResultMap" type="com.lzc.teachingInteraction.entity.Advise">
     <!--
       WARNING - @mbg.generated
     -->
-    <id column="c_id" jdbcType="VARCHAR" property="cId" />
-    <result column="t_id" jdbcType="VARCHAR" property="tId" />
+    <id column="ad_id" jdbcType="VARCHAR" property="adId" />
+    <result column="user_id" jdbcType="VARCHAR" property="userId" />
     <result column="ad_name" jdbcType="VARCHAR" property="adName" />
-    <result column="detail" jdbcType="VARCHAR" property="detail" />
-    <result column="cTime" jdbcType="INTEGER" property="ctime" />
-    <result column="uTime" jdbcType="INTEGER" property="utime" />
-    <result column="chance" jdbcType="INTEGER" property="chance" />
-    <result column="c_logoUrl" jdbcType="VARCHAR" property="cLogourl" />
+    <result column="ad_email" jdbcType="VARCHAR" property="adEmail" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <!--
@@ -82,7 +79,7 @@
     <!--
       WARNING - @mbg.generated
     -->
-    c_id, t_id, ad_name, detail, cTime, uTime, chance, c_logoUrl
+    ad_id, user_id, ad_name, ad_email, remark
   </sql>
 
 </mapper>

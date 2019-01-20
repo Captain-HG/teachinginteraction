@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title -->
+    <title>Academy - Education Course Template</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="img/core-img/favicon.ico">
+
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <!-- ##### Preloader ##### -->
+    <div id="preloader">
+        <i class="circle-preloader"></i>
+    </div>
+
+    <!-- ##### Header Area Start ##### -->
+    <header class="header-area">
+
+        <!-- Top Header Area -->
+        <div class="top-header">
+            <div class="container h-100">
+                <div class="row h-100">
+                    <div class="col-12 h-100">
+                        <div class="header-content h-100 d-flex align-items-center justify-content-between">
+                            <div class="academy-logo">
+                                <a href="index.html"><img src="img/core-img/logo.png" alt=""></a>
+                            </div>
+                            <div class="login-content">
+                                <a href="#">登入</a>/<a href="#">注册</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navbar Area -->
+        <div class="academy-main-menu">
+            <div class="classy-nav-container breakpoint-off">
+                <div class="container">
+                    <!-- Menu -->
+                    <nav class="classy-navbar justify-content-between" id="academyNav">
+
+                        <!-- Navbar Toggler -->
+                        <div class="classy-navbar-toggler">
+                            <span class="navbarToggler"><span></span><span></span><span></span></span>
+                        </div>
+
+                        <!-- Menu -->
+                        <div class="classy-menu">
+
+                            <!-- close btn -->
+                            <div class="classycloseIcon">
+                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                            </div>
+
+                            <!-- Nav Start -->
+                            <div class="classynav">
+                                <ul>
+                                    <li><a href="index.html">首页</a></li>
+                                    <!--<li><a href="#">Pages</a>-->
+                                        <!--<ul class="dropdown">-->
+                                            <!--<li><a href="index.html">首页</a></li>-->
+                                            <!--<li><a href="about-us.html">About Us</a></li>-->
+                                            <!--<li><a href="course.html">Course</a></li>-->
+                                            <!--<li><a href="blog.html">Blog</a></li>-->
+                                            <!--<li><a href="contact.html">Contact</a></li>-->
+                                            <!--<li><a href="elements.html">Elements</a></li>-->
+                                        <!--</ul>-->
+                                    <!--</li>-->
+                                    <!--<li><a href="#">Mega Menu</a>-->
+                                        <!--<div class="megamenu">-->
+                                            <!--<ul class="single-mega cn-col-4">-->
+                                                <!--<li><a href="#">Home</a></li>-->
+                                                <!--<li><a href="#">Services &amp; Features</a></li>-->
+                                                <!--<li><a href="#">Accordions and tabs</a></li>-->
+                                                <!--<li><a href="#">Menu ideas</a></li>-->
+                                                <!--<li><a href="#">Students Gallery</a></li>-->
+                                            <!--</ul>-->
+                                            <!--<ul class="single-mega cn-col-4">-->
+                                                <!--<li><a href="#">Home</a></li>-->
+                                                <!--<li><a href="#">Services &amp; Features</a></li>-->
+                                                <!--<li><a href="#">Accordions and tabs</a></li>-->
+                                                <!--<li><a href="#">Menu ideas</a></li>-->
+                                                <!--<li><a href="#">Students Gallery</a></li>-->
+                                            <!--</ul>-->
+                                            <!--<ul class="single-mega cn-col-4">-->
+                                                <!--<li><a href="#">Home</a></li>-->
+                                                <!--<li><a href="#">Services &amp; Features</a></li>-->
+                                                <!--<li><a href="#">Accordions and tabs</a></li>-->
+                                                <!--<li><a href="#">Menu ideas</a></li>-->
+                                                <!--<li><a href="#">Students Gallery</a></li>-->
+                                            <!--</ul>-->
+                                            <!--<div class="single-mega cn-col-4">-->
+                                                <!--<img src="img/bg-img/bg-1.jpg" alt="">-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</li>-->
+                                    <li><a href="about-us.html">关于我们</a></li>
+                                    <li><a href="course.html">课程</a></li>
+                                    <li><a href="contact.html">联系我们</a></li>
+
+                                </ul>
+                            </div>
+                            <!-- Nav End -->
+                        </div>
+
+                        <!-- Calling Info -->
+                        <div class="calling-info">
+                            <div class="call-center">
+                                <a href="tel:+654563325568889"><i class="icon-telephone-2"></i> <span>(+65) 456 332 5568 889</span></a>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ##### Header Area End ##### -->
+
+    <!-- ##### Hero Area Start ##### -->
+    <section class="hero-area">
+        <div class="hero-slides owl-carousel">
+
+            <!-- Single Hero Slide -->
+            <div class="single-hero-slide bg-img" style="background-image: url(img/bg-img/bg-1.jpg);">
+                <div class="container h-100">
+                    <div class="row h-100 align-items-center">
+                        <div class="col-12">
+                            <div class="hero-slides-content">
+                                <h4 data-animation="fadeInUp" data-delay="100ms">最新的所有课程</h4>
+                                <h2 data-animation="fadeInUp" data-delay="400ms">欢迎来到我们 <br>师生互动网课平台</h2>
+                                <a href="#" class="btn academy-btn" data-animation="fadeInUp" data-delay="700ms">获取更多</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+    <!-- ##### Hero Area End ##### -->
+
+    <!-- ##### Top Feature Area Start ##### -->
+    <div class="top-features-area wow fadeInUp" data-wow-delay="300ms">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ##### Top Feature Area End ##### -->
+
+    <!-- ##### Course Area Start ##### -->
+    <div class="academy-courses-area section-padding-100-0">
+        <div class="container">
+            <div class="row">
+                <!-- Single Course Area -->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="single-course-area d-flex align-items-center mb-100 wow fadeInUp" data-wow-delay="300ms">
+                        <div class="course-icon">
+                            <i class="icon-id-card"></i>
+                        </div>
+                        <div class="course-content">
+                            <h4>Business School</h4>
+                            <p>Cras vitae turpis lacinia, lacinia la cus non, fermentum nisi.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Single Course Area -->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="single-course-area d-flex align-items-center mb-100 wow fadeInUp" data-wow-delay="400ms">
+                        <div class="course-icon">
+                            <i class="icon-worldwide"></i>
+                        </div>
+                        <div class="course-content">
+                            <h4>Marketing</h4>
+                            <p>Lacinia, lacinia la cus non, fermen tum nisi.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Single Course Area -->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="single-course-area d-flex align-items-center mb-100 wow fadeInUp" data-wow-delay="500ms">
+                        <div class="course-icon">
+                            <i class="icon-map"></i>
+                        </div>
+                        <div class="course-content">
+                            <h4>Photography</h4>
+                            <p>Cras vitae turpis lacinia, lacinia la cus non, fermentum nisi.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Single Course Area -->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="single-course-area d-flex align-items-center mb-100 wow fadeInUp" data-wow-delay="600ms">
+                        <div class="course-icon">
+                            <i class="icon-like"></i>
+                        </div>
+                        <div class="course-content">
+                            <h4>Social Media</h4>
+                            <p>Cras vitae turpis lacinia, lacinia la cus non, fermentum nisi.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Single Course Area -->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="single-course-area d-flex align-items-center mb-100 wow fadeInUp" data-wow-delay="700ms">
+                        <div class="course-icon">
+                            <i class="icon-responsive"></i>
+                        </div>
+                        <div class="course-content">
+                            <h4>Development</h4>
+                            <p>Lacinia, lacinia la cus non, fermen tum nisi.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Single Course Area -->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="single-course-area d-flex align-items-center mb-100 wow fadeInUp" data-wow-delay="800ms">
+                        <div class="course-icon">
+                            <i class="icon-message"></i>
+                        </div>
+                        <div class="course-content">
+                            <h4>Design</h4>
+                            <p>Cras vitae turpis lacinia, lacinia la cus non, fermentum nisi.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ##### Course Area End ##### -->
+    <div class="tlinks">Collect from</div>
+    <!-- ##### Testimonials Area Start ##### -->
+    <div class="testimonials-area section-padding-100 bg-img bg-overlay" style="background-image: url(img/bg-img/bg-2.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-heading text-center mx-auto white wow fadeInUp" data-wow-delay="300ms">
+                        <span>我们的评价</span>
+                        <h3>看看我们满意的客户对我们的评价</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <!-- Single Testimonials Area -->
+                <div class="col-12 col-md-6">
+                    <div class="single-testimonial-area mb-100 d-flex wow fadeInUp" data-wow-delay="400ms">
+                        <div class="testimonial-thumb">
+                            <img src="img/bg-img/t1.jpg" alt="">
+                        </div>
+                        <div class="testimonial-content">
+                            <h5>伟大教师</h5>
+                            <p>老师治学严谨，要求严格，能深入了解学生的学习和生活状况，循循善诱，平易近人;注意启发和调动学生的积极性，课堂气氛较为活跃;上课例题丰富，不厌其烦，细心讲解，使学生有所收获;半数认真工整，批改作业认真及时并注意讲解学生易犯错误;最重要的是，老师能虚心并广泛听取学生的意见和反馈信息，做到及时修正和调整自己的教学。总之，老师是一个不可多得的好教师。</p>
+                            <h6><span>吉安娜,</span> Student</h6>
+                        </div>
+                    </div>
+                </div>
+                <!-- Single Testimonials Area -->
+                <div class="col-12 col-md-6">
+                    <div class="single-testimonial-area mb-100 d-flex wow fadeInUp" data-wow-delay="500ms">
+                        <div class="testimonial-thumb">
+                            <img src="img/bg-img/t2.jpg" alt="">
+                        </div>
+                        <div class="testimonial-content">
+                            <h5>简单易用的课程</h5>
+                            <p>老师的课有十分的有趣，讲解特别仔细，知识点的讲解、巩固使用多媒体设备来辅助教学，效益更高，使我们理解的很深刻，应用起来非常简单。</p>
+                            <h6><span>雷克萨,</span> Student</h6>
+                        </div>
+                    </div>
+                </div>
+                <!-- Single Testimonials Area -->
+                <div class="col-12 col-md-6">
+                    <div class="single-testimonial-area mb-100 d-flex wow fadeInUp" data-wow-delay="600ms">
+                        <div class="testimonial-thumb">
+                            <img src="img/bg-img/t3.jpg" alt="">
+                        </div>
+                        <div class="testimonial-content">
+                            <h5>我最爱来这学习</h5>
+                            <p>在这我可以选择我喜欢的课程，还可以尽情的问老师题目</p>
+                            <h6><span>阿尔萨斯,</span> Student</h6>
+                        </div>
+                    </div>
+                </div>
+                <!-- Single Testimonials Area -->
+                <div class="col-12 col-md-6">
+                    <div class="single-testimonial-area mb-100 d-flex wow fadeInUp" data-wow-delay="700ms">
+                        <div class="testimonial-thumb">
+                            <img src="img/bg-img/t4.jpg" alt="">
+                        </div>
+                        <div class="testimonial-content">
+                            <h5>一个好的平台</h5>
+                            <p>下载我所需的资料，选择喜欢的而老师，随时随地地进行学习，课程也是十分的精彩.</p>
+                            <h6><span>方雨生,</span> Student</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="load-more-btn text-center wow fadeInUp" data-wow-delay="800ms">
+                        <a href="about-us.html" class="btn academy-btn">关于我们更多</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ##### Testimonials Area End ##### -->
+
+    <!-- ##### Top Popular Courses Area Start ##### -->
+    <div class="top-popular-courses-area section-padding-100-70">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-heading text-center mx-auto wow fadeInUp" data-wow-delay="300ms">
+                        <span>最近 最为</span>
+                        <h3>流行的，火热的课程</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+               
+                <!-- Single Top Popular Course -->
+                <div class="col-12 col-lg-6">
+                    <div class="single-top-popular-course d-flex align-items-center flex-wrap mb-30 wow fadeInUp" data-wow-delay="400ms">
+                        <div class="popular-course-content">
+                            <h5>java</h5>
+                            <span>By Capter-HG   |  2019 01 19</span>
+                            <div class="course-ratings">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star-o" aria-hidden="true"></i>
+                            </div>
+                            <p>Java是一门面向对象编程语言，不仅吸收了C++语言的各种优点，还摒弃了C++里难以理解的多继承、指针等概念，因此Java语言具有功能强大和简单易用两个特征。</p>
+                            <a href="#" class="btn academy-btn btn-sm">了解更多</a>
+                        </div>
+                        <div class="popular-course-thumb bg-img" style="background-image: url(img/logo/javaLogo.jpg);"></div>
+                    </div>
+                </div>
+                
+                <!-- Single Top Popular Course -->
+                <div class="col-12 col-lg-6">
+                    <div class="single-top-popular-course d-flex align-items-center flex-wrap mb-30 wow fadeInUp" data-wow-delay="500ms">
+                        <div class="popular-course-content">
+                            <h5> HTML5</h5>
+                            <span>By 古尔丹   |  2019 01 19</span>
+                            <div class="course-ratings">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star-o" aria-hidden="true"></i>
+                            </div>
+                            <p>超文本标记语言，标准通用标记语言下的一个应用。 “超文本”就是指页面内可以包含图片、链接，甚至音乐、程序等非文字元素。</p>
+                            <a href="#" class="btn academy-btn btn-sm">了解更多</a>
+                        </div>
+                        <div class="popular-course-thumb bg-img" style="background-image: url(img/logo/htmlLogo.jpg);"></div>
+                    </div>
+                </div>
+                
+                <!-- Single Top Popular Course -->
+                <div class="col-12 col-lg-6">
+                    <div class="single-top-popular-course d-flex align-items-center flex-wrap mb-30 wow fadeInUp" data-wow-delay="600ms">
+                        <div class="popular-course-content">
+                            <h5>php</h5>
+                            <span>By 安度因   |  2019 01 19</span>
+                            <div class="course-ratings">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star-o" aria-hidden="true"></i>
+                            </div>
+                            <p>PHP是一种通用开源脚本语言。语法吸收了C语言、Java和Perl的特点，利于学习，使用广泛，主要适用于Web开发领域。PHP 独特的语法混合了C、Java、Perl以及PHP自创的语法。它可以比CGI或者Perl更快速地执行动态网页。</p>
+                            <a href="#" class="btn academy-btn btn-sm">了解更多</a>
+                        </div>
+                        <div class="popular-course-thumb bg-img" style="background-image: url(img/logo/phpLogo.jpg);"></div>
+                    </div>
+                </div>
+                
+                <!-- Single Top Popular Course -->
+                <div class="col-12 col-lg-6">
+                    <div class="single-top-popular-course d-flex align-items-center flex-wrap mb-30 wow fadeInUp" data-wow-delay="700ms">
+                        <div class="popular-course-content">
+                            <h5>python</h5>
+                            <span>By 萨尔   |  2019 01 19</span>
+                            <div class="course-ratings">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star-o" aria-hidden="true"></i>
+                            </div>
+                            <p>Python是一种计算机程序设计语言。是一种动态的、面向对象的脚本语言，最初被设计用于编写自动化脚本(shell)，随着版本的不断更新和语言新功能的添加，越来越多被用于独立的、大型项目的开发。</p>
+                            <a href="#" class="btn academy-btn btn-sm">了解更多</a>
+                        </div>
+                        <div class="popular-course-thumb bg-img" style="background-image: url(img/logo/pythonLogo.jpg);"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ##### Top Popular Courses Area End ##### -->
+
+
+
+    <!-- ##### CTA Area Start ##### -->
+    <div class="call-to-action-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="cta-content d-flex align-items-center justify-content-between flex-wrap">
+                        <h3>如果你想加入我们团队? </h3>
+                        <a href="contact.html" class="btn academy-btn">come on</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ##### CTA Area End ##### -->
+
+    <!-- ##### Footer Area Start ##### -->
+    <footer class="footer-area">
+        <div class="main-footer-area section-padding-100-0">
+            <div class="container">
+                <div class="row">
+                    <!-- Footer Widget Area -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="footer-widget mb-100">
+                            <div class="widget-title">
+                                <a href="#"><img src="img/core-img/logo2.png" alt=""></a>
+                            </div>
+                            <p>在这个物质横流的社会，你是否渴望一份新的知识？一个新的大门？一个新的机会？在这，你可以得到你所要的答案，。</p>
+
+                        </div>
+                    </div>
+                    <!-- Footer Widget Area -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="footer-widget mb-100">
+                            <div class="widget-title">
+                                <h6>Usefull Links</h6>
+                            </div>
+                            <nav>
+                                <ul class="useful-links">
+                                    <li><a href="#">主页</a></li>
+                                    <li><a href="#">关于我们</a></li>
+                                    <li><a href="#">课程</a></li>
+
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <!-- Footer Widget Area -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="footer-widget mb-100">
+                            <div class="widget-title">
+                                <h6>Gallery</h6>
+                            </div>
+                            <div class="gallery-list d-flex justify-content-between flex-wrap">
+                                <a href="img/bg-img/gallery1.jpg" class="gallery-img" title="Gallery Image 1"><img src="img/bg-img/gallery1.jpg" alt=""></a>
+                                <a href="img/bg-img/gallery2.jpg" class="gallery-img" title="Gallery Image 2"><img src="img/bg-img/gallery2.jpg" alt=""></a>
+                                <a href="img/bg-img/gallery3.jpg" class="gallery-img" title="Gallery Image 3"><img src="img/bg-img/gallery3.jpg" alt=""></a>
+                                <a href="img/bg-img/gallery4.jpg" class="gallery-img" title="Gallery Image 4"><img src="img/bg-img/gallery4.jpg" alt=""></a>
+                                <a href="img/bg-img/gallery5.jpg" class="gallery-img" title="Gallery Image 5"><img src="img/bg-img/gallery5.jpg" alt=""></a>
+                                <a href="img/bg-img/gallery6.jpg" class="gallery-img" title="Gallery Image 6"><img src="img/bg-img/gallery6.jpg" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Footer Widget Area -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="footer-widget mb-100">
+                            <div class="widget-title">
+                                <h6>Contact</h6>
+                            </div>
+                            <div class="single-contact d-flex mb-30">
+                                <i class="icon-placeholder"></i>
+                                <p>湖南 长沙 浏阳(花炮之乡，欢迎来玩)</p>
+                            </div>
+                            <div class="single-contact d-flex mb-30">
+                                <i class="icon-telephone-1"></i>
+                                <p>罗先生：18815611695  <br>x-Boss：83442442</p>
+                            </div>
+                            <div class="single-contact d-flex">
+                                <i class="icon-contract"></i>
+                                <p>1436899024@qq.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+    <!-- ##### Footer Area Start ##### -->
+
+    <!-- ##### All Javascript Script ##### -->
+    <!-- jQuery-2.2.4 js -->
+    <script src="js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="js/bootstrap/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <!-- All Plugins js -->
+    <script src="js/plugins/plugins.js"></script>
+    <!-- Active js -->
+    <script src="js/active.js"></script>
+</body>
+
+</html>

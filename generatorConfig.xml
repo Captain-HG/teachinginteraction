@@ -49,50 +49,54 @@
 
         <!-- tableName：数据库表名，domainObjectName：生成文件名 ，schema：数据源-->
 
-        <table tableName="user" domainObjectName="User">
+        <!--<table tableName="user" domainObjectName="User">-->
 
-            <!--<generatedKey column="c_id" sqlStatement="Mysql" identity="true" />-->
-        </table>
-        <table tableName="teacher" domainObjectName="Teacher">
+            <!--&lt;!&ndash;<generatedKey column="c_id" sqlStatement="Mysql" identity="true" />&ndash;&gt;-->
+        <!--</table>-->
+        <!--<table tableName="teacher" domainObjectName="Teacher">-->
 
-            <!--<generatedKey column="c_id" sqlStatement="Mysql" identity="true" />-->
-        </table>
-        <table tableName="student" domainObjectName="Student">
+            <!--&lt;!&ndash;<generatedKey column="c_id" sqlStatement="Mysql" identity="true" />&ndash;&gt;-->
+        <!--</table>-->
+        <!--<table tableName="student" domainObjectName="Student">-->
 
-            <!--<generatedKey column="c_id" sqlStatement="Mysql" identity="true" />-->
-        </table>
-        <table tableName="admin" domainObjectName="Admin">
+            <!--&lt;!&ndash;<generatedKey column="c_id" sqlStatement="Mysql" identity="true" />&ndash;&gt;-->
+        <!--</table>-->
+        <!--<table tableName="admin" domainObjectName="Admin">-->
 
-            <!--<generatedKey column="c_id" sqlStatement="Mysql" identity="true" />-->
-        </table>
-        <table tableName="subject" domainObjectName="Subject">
+            <!--&lt;!&ndash;<generatedKey column="c_id" sqlStatement="Mysql" identity="true" />&ndash;&gt;-->
+        <!--</table>-->
+        <!--<table tableName="subject" domainObjectName="Subject">-->
 
-            <!--<generatedKey column="c_id" sqlStatement="Mysql" identity="true" />-->
-        </table>
+            <!--&lt;!&ndash;<generatedKey column="c_id" sqlStatement="Mysql" identity="true" />&ndash;&gt;-->
+        <!--</table>-->
         <table tableName="course" domainObjectName="Course">
 
             <!--<generatedKey column="c_id" sqlStatement="Mysql" identity="true" />-->
         </table>
-        <table tableName="notice" domainObjectName="Notice">
+        <table tableName="advise" domainObjectName="Advise">
 
             <!--<generatedKey column="c_id" sqlStatement="Mysql" identity="true" />-->
         </table>
-        <table tableName="material" domainObjectName="Material">
+        <!--<table tableName="notice" domainObjectName="Notice">-->
 
-            <!--<generatedKey column="c_id" sqlStatement="Mysql" identity="true" />-->
-        </table>
-        <table tableName="student_subject">
+            <!--&lt;!&ndash;<generatedKey column="c_id" sqlStatement="Mysql" identity="true" />&ndash;&gt;-->
+        <!--</table>-->
+        <!--<table tableName="material" domainObjectName="Material">-->
 
-            <!--<generatedKey column="c_id" sqlStatement="Mysql" identity="true" />-->
-        </table>
-        <table tableName="student_material">
+            <!--&lt;!&ndash;<generatedKey column="c_id" sqlStatement="Mysql" identity="true" />&ndash;&gt;-->
+        <!--</table>-->
+        <!--<table tableName="student_subject">-->
 
-            <!--<generatedKey column="c_id" sqlStatement="Mysql" identity="true" />-->
-        </table>
-        <table tableName="course_student">
+            <!--&lt;!&ndash;<generatedKey column="c_id" sqlStatement="Mysql" identity="true" />&ndash;&gt;-->
+        <!--</table>-->
+        <!--<table tableName="student_material">-->
 
-            <!--<generatedKey column="c_id" sqlStatement="Mysql" identity="true" />-->
-        </table>
+            <!--&lt;!&ndash;<generatedKey column="c_id" sqlStatement="Mysql" identity="true" />&ndash;&gt;-->
+        <!--</table>-->
+        <!--<table tableName="course_student">-->
+
+            <!--&lt;!&ndash;<generatedKey column="c_id" sqlStatement="Mysql" identity="true" />&ndash;&gt;-->
+        <!--</table>-->
         <!--<table tableName="review" domainObjectName="Review">-->
 
             <!--&lt;!&ndash;<generatedKey column="c_id" sqlStatement="Mysql" identity="true" />&ndash;&gt;-->
