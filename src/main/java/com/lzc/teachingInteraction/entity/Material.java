@@ -25,7 +25,8 @@ public class Material implements Serializable {
 
     private String remark;
 
-    private Integer 下载数目;
+    @Column(name = "downNumber")
+    private Integer downnumber;
 
     private static final long serialVersionUID = 1L;
 
@@ -142,17 +143,17 @@ public class Material implements Serializable {
     }
 
     /**
-     * @return 下载数目
+     * @return downNumber
      */
-    public Integer get下载数目() {
-        return 下载数目;
+    public Integer getDownnumber() {
+        return downnumber;
     }
 
     /**
-     * @param 下载数目
+     * @param downnumber
      */
-    public void set下载数目(Integer 下载数目) {
-        this.下载数目 = 下载数目;
+    public void setDownnumber(Integer downnumber) {
+        this.downnumber = downnumber;
     }
 
     @Override
@@ -169,7 +170,7 @@ public class Material implements Serializable {
         sb.append(", url=").append(url);
         sb.append(", ctime=").append(ctime);
         sb.append(", remark=").append(remark);
-        sb.append(", 下载数目=").append(下载数目);
+        sb.append(", downnumber=").append(downnumber);
         sb.append("]");
         return sb.toString();
     }

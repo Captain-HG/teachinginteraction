@@ -644,63 +644,63 @@ public class MaterialExample {
             return (Criteria) this;
         }
 
-        public Criteria and下载数目IsNull() {
-            addCriterion("下载数目 is null");
+        public Criteria andDownnumberIsNull() {
+            addCriterion("downNumber is null");
             return (Criteria) this;
         }
 
-        public Criteria and下载数目IsNotNull() {
-            addCriterion("下载数目 is not null");
+        public Criteria andDownnumberIsNotNull() {
+            addCriterion("downNumber is not null");
             return (Criteria) this;
         }
 
-        public Criteria and下载数目EqualTo(Integer value) {
-            addCriterion("下载数目 =", value, "下载数目");
+        public Criteria andDownnumberEqualTo(Integer value) {
+            addCriterion("downNumber =", value, "downnumber");
             return (Criteria) this;
         }
 
-        public Criteria and下载数目NotEqualTo(Integer value) {
-            addCriterion("下载数目 <>", value, "下载数目");
+        public Criteria andDownnumberNotEqualTo(Integer value) {
+            addCriterion("downNumber <>", value, "downnumber");
             return (Criteria) this;
         }
 
-        public Criteria and下载数目GreaterThan(Integer value) {
-            addCriterion("下载数目 >", value, "下载数目");
+        public Criteria andDownnumberGreaterThan(Integer value) {
+            addCriterion("downNumber >", value, "downnumber");
             return (Criteria) this;
         }
 
-        public Criteria and下载数目GreaterThanOrEqualTo(Integer value) {
-            addCriterion("下载数目 >=", value, "下载数目");
+        public Criteria andDownnumberGreaterThanOrEqualTo(Integer value) {
+            addCriterion("downNumber >=", value, "downnumber");
             return (Criteria) this;
         }
 
-        public Criteria and下载数目LessThan(Integer value) {
-            addCriterion("下载数目 <", value, "下载数目");
+        public Criteria andDownnumberLessThan(Integer value) {
+            addCriterion("downNumber <", value, "downnumber");
             return (Criteria) this;
         }
 
-        public Criteria and下载数目LessThanOrEqualTo(Integer value) {
-            addCriterion("下载数目 <=", value, "下载数目");
+        public Criteria andDownnumberLessThanOrEqualTo(Integer value) {
+            addCriterion("downNumber <=", value, "downnumber");
             return (Criteria) this;
         }
 
-        public Criteria and下载数目In(List<Integer> values) {
-            addCriterion("下载数目 in", values, "下载数目");
+        public Criteria andDownnumberIn(List<Integer> values) {
+            addCriterion("downNumber in", values, "downnumber");
             return (Criteria) this;
         }
 
-        public Criteria and下载数目NotIn(List<Integer> values) {
-            addCriterion("下载数目 not in", values, "下载数目");
+        public Criteria andDownnumberNotIn(List<Integer> values) {
+            addCriterion("downNumber not in", values, "downnumber");
             return (Criteria) this;
         }
 
-        public Criteria and下载数目Between(Integer value1, Integer value2) {
-            addCriterion("下载数目 between", value1, value2, "下载数目");
+        public Criteria andDownnumberBetween(Integer value1, Integer value2) {
+            addCriterion("downNumber between", value1, value2, "downnumber");
             return (Criteria) this;
         }
 
-        public Criteria and下载数目NotBetween(Integer value1, Integer value2) {
-            addCriterion("下载数目 not between", value1, value2, "下载数目");
+        public Criteria andDownnumberNotBetween(Integer value1, Integer value2) {
+            addCriterion("downNumber not between", value1, value2, "downnumber");
             return (Criteria) this;
         }
     }

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<title th:text="${course.adName}">
+    </title>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="course_files/moco.css" type="text/css">
+    <link rel="stylesheet" href="course_files/swiper-3.css">
+
+<!-- <script src="course_files/push.js"></script><script type="text/javascript" async="" src="course_files/rt.js"></script><script src="course_files/hm.js"></script><script type="text/javascript" id="zhuge-js" async="" src="course_files/zhuge.js"></script><script type="text/javascript">
+
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('!4(){3 a={};3 c=0;3 5=[{d:\'//o.q.g/o/p/K/J.r\',6:0},{d:\'//p.q.g/I/L-O.r\',6:0}];3 w=4(){3 j,s=e N("(^| )"+"k=([^;]*)(;|$)");8(j=u.l.M(s)){m H(j[2])}E{m z}};3 y=4(t){3 n=w();3 b=e F();b.G(b.D()+13*v*v*10);u.l="k="+t+";14="+b.R()+";S=/;P=Q.g";8(t&&t!=n){X.U.V()}};3 C=4(i){3 7=e W();7.T=4(){12(a[i]);a[i]=z;9(i,0)};7.Z=4(){9(i,1)};a[i]=11(4(){7.B="";9(i,1)},Y);7.B=5[i].d};3 9=4(x,6){c++;5[x].6=6;8(c==5.f){3 h=0;A(3 i=0;i<5.f;i++){8(5[i].6==1){h=1}}y(h)}};A(3 i=0;i<5.f;i++){C(i)}}()',62,67,'|||var|function|urls|flag|imgobj|if|callback|timer|exp|count|url|new|length|com|error||arr|IMCDNS|cookie|return|_0|static|img|mukewang|png|reg||document|60|getcookie|index|setcookie|null|for|src|checkCdn|getTime|else|Date|setTime|unescape|images|logo|common|unknow|match|RegExp|80|domain|imooc|toGMTString|path|onload|location|reload|Image|window|3000|onerror|1000|setTimeout|clearTimeout|24|expires'.split('|'),0,{}))
+
+</script> -->
+
+
+<!-- <script type="text/javascript">
+
+var OP_CONFIG={"module":"course","page":"learn","userout":0,"usercaution":null,"userInfo":{"uid":7488846,"uidaes":"Dhdyi-q8utc,"}};
+var isLogin = 1;
+var is_choice = "";
+var seajsTimestamp="v=201901150953";
+var _msg_unread = 0; 
+var _not_unread = 0; 
+var _cart_num = 0;
+</script>
+ -->
+
+
+
+
+
+
+
+<link href="course_files/captcha.css" rel="stylesheet">
+<script>
+/*学习页通用配置*/
+var GC = {
+  course: {
+    id: 1084,
+    name: 'Taro多端框架开发外卖首页',
+    pic: '',
+    video_url: ''
+  },
+  classmates: 20 // 你的同学一页显示数量
+};
+
+
+</script>
+<script>
+
+var hasLearn;
+    hasLearn = 0;
+
+</script>
+
+
+
+
+<!-- <script src="course_files/init.js"></script>
+
+<script charset="utf-8" async="" src="course_files/seajs-text.js"></script>
+<script charset="utf-8" async="" src="course_files/common.js"></script>
+<script charset="utf-8" async="" src="course_files/jquery_002.js"></script>
+<script charset="utf-8" async="" src="course_files/string.js"></script>
+<script charset="utf-8" async="" src="course_files/userinfo.js"></script>
+<script charset="utf-8" async="" src="course_files/cart.js"></script>
+<script charset="utf-8" async="" src="course_files/cookie.js"></script>
+<script charset="utf-8" async="" src="course_files/suggest.js"></script>
+<script charset="utf-8" async="" src="course_files/store.js"></script>
+<script charset="utf-8" async="" src="course_files/json.js"></script>
+<script charset="utf-8" async="" src="course_files/im.js"></script>
+<script charset="utf-8" async="" src="course_files/learn.js"></script>
+<script charset="utf-8" async="" src="course_files/moco.js"></script>
+<script charset="utf-8" async="" src="course_files/course.js"></script>
+<script charset="utf-8" async="" src="course_files/course_common.js"></script>
+<script charset="utf-8" async="" src="course_files/course_collection.js"></script>
+<script charset="utf-8" async="" src="course_files/socket.js"></script>
+<script charset="utf-8" async="" src="course_files/layer.js"></script>
+
+<script charset="utf-8" async="" src="course_files/jquery.js"></script>
+<script charset="utf-8" async="" src="course_files/course_tipoff.js"></script>
+<script src="course_files/share.js"></script> -->
+<link rel="stylesheet" href="course_files/share_style0_16.css">
+<link charset="utf-8" rel="stylesheet" href="course_files/layer.css">
+<link rel="stylesheet" href="course_files/a.css" type="text/css">
+</head>
+
+<body>
+
+
+
+
+
+
+<div id="main">
+
+<div class="course-infos">
+    <div class="w pr">
+        <div class="path">  
+            <a href="#">课程</a>
+                        <i class="path-split">\</i><a href="#?c=fe">前端开发</a>
+                                    <i class="path-split">\</i><a href="#">React.JS</a>
+                        <i class="path-split">\</i><a href="#"><span>Taro多端框架开发外卖首页</span></a>
+        </div>
+        <div class="hd clearfix">
+            <h2 class="l" th:text="${course.adName}">首页</h2>
+                    </div>
+
+        <div class="statics clearfix">
+                        <div class="teacher-info l">
+            <a href="#" target="_blank">
+                <img data-userid="7376453" class="js-usercard-dialog" src="course_files/5b8cf0be0001b57902000200-80-80.jpg" width="80" height="80">
+            </a>
+            <span class="tit">
+                <a href="#" target="_blank" th:text="${user.name}"></a><i class="icon-imooc"></i>
+            </span>
+            <span class="job">老师</span>
+                        <div class="teacher-course">
+                <div class="teacher-course-arrow"><span></span></div>
+                <div class="teacher-course-title">
+                    <a href="#" class="r">查看讲师更多课程 <i class="imv2-arrow2_r"></i></a>
+                    水若寒宇讲师的其他课程
+                </div>
+                <div class="teacher-course-list recom-course-list-box">
+                    <ul class="recom-course-list clearfix">
+                                                <li class="clearfix">
+                                                        <a href="#" class="clearfix" target="_blank">
+                                <div class="l course-img" style="background-image: url(//img.mukewang.com/szimg/5c2212b30886a3e606000338-360-202.jpg);"></div>
+                                                        
+                            <div class="l content-box">
+                                <p class="smalle-title">掌握Taro多端框架 快速上手小程序/H5开发</p>
+                                <div class="clearfix learn-detail">实战<span>·</span>中级<span>·</span><i class="imv2-set-sns"></i>98</div>
+                                <div class="teacher-course-price">                                    <div class="clearfix">
+                                        
+                                                                        
+                                                            ￥266.00
+                                            
+                                            
+                                                                        
+    </div>
+       
+                                
+                                </div>
+                            </div>
+                            </a>
+                        </li>
+                                           </ul>
+                </div>
+            </div>
+                    </div>
+                
+            <div class="static-item l">
+                <span class="meta">难度</span><span class="meta-value">中级</span>
+            </div>
+            <div class="static-item l">
+                <span class="meta">时长</span><span class="meta-value"> 4小时11分</span>
+            </div>
+            <div class="static-item l">
+                <span class="meta">学习人数</span><span class="meta-value js-learn-num">4849</span>
+            </div>
+            <div class="static-item l score-btn">
+                <span class="meta">综合评分</span><span class="meta-value">9.3</span>
+                
+
+                <div class="score-wrap triangle">
+                    <div class="score-box">
+                        <a href="#" class="person-num">
+                            <span class="person-num l">8人评价</span>
+                        </a>
+                                                    <a href="#" class="evaluation-btn r">查看评价</a>
+                                                <div class="score-detail-box">
+                            <div class="score-static-item">
+                                <span class="meta-value">10.0</span>
+                                <span class="meta">内容实用</span>
+                            </div>
+                            <div class="score-static-item">
+                                <span class="meta-value">9.8</span>
+                                <span class="meta">简洁易懂</span>
+                            </div>
+                            <div class="score-static-item">
+                                <span class="meta-value">8.2</span>
+                                <span class="meta">逻辑清晰</span>
+                            </div>
+                        </div>
+                        <div class="icon-drop_down"></div>
+                    </div>
+
+                </div>
+                
+            </div>
+            
+        </div>
+   
+
+ 
+
+    </div>
+    <div class="info-bg" id="js-info-bg">
+        <div class="cover-img-wrap">
+        <img data-src="//img.mukewang.com/5c0a367a0001cd1406000338.jpg" alt="" style="display: none" id="js-cover-img">
+        </div>
+        <div class="cover-mask"></div>
+    <canvas width="1349" height="200" class="cover-canvas" id="js-cover-canvas"></canvas></div>
+</div>
+<div class="course-info-menu ">
+	<div class="w">
+		<ul class="course-menu">
+			<li><a class="moco-change-big-btn active" id="learnOn" href="#">课程章节</a></li>
+			
+			<li><span>35</span><a id="qaOn" class="moco-change-big-btn " href="#">问答评论</a></li>
+			<li><a id="noteOn" class="moco-change-big-btn " href="#">同学笔记</a></li>
+			<li><span>8</span><a id="commentOn" class="moco-change-big-btn " href="#">用户评价</a></li>
+
+		</ul>
+	</div>
+
+
+	
+</div><!-- 课程面板 -->
+
+<div class="course-info-main clearfix w">
+
+    <div class="content-wrap clearfix">
+        <div class="content">
+                        <!-- 课程简介 -->
+            <div class="course-description course-wrap" th:text="${course.detail}">
+
+            </div>
+            <!-- 课程简介 end -->
+    
+            <!-- 课程章节 -->
+            <div class="course-chapters">
+                                        <div class="chapter course-wrap ">
+                    <!-- 章节标题 -->
+                    <h3>
+                       详细资料及视频
+                    </h3>
+
+                    <!-- 章节标题 end -->
+                    <!-- 章节小节 -->
+                                        <ul class="video">
+                                                <li data-media-id="18406" th:each="material, interStat : ${materialList}">
+                                                            <a href="#" class="J-media-item"  >
+                                    <i class="imv2-play_circle type"></i>
+                                                           <span th:text="${material.name}"></span>
+                                                                        
+                                                                        <button class="r moco-btn moco-btn-red preview-btn">开始学习</button>
+                                                                        
+                                </a>
+                                                    </li>
+                                                <li data-media-id="18407">
+                                                            <a href="#" class="J-media-item">
+                                    <i class="imv2-play_circle type"></i>
+                                    1-2 搭建Taro环境 
+                                                                            (26:59)
+                                                                        
+                                                                        <button class="r moco-btn moco-btn-red preview-btn">开始学习</button>
+                                                                        
+                                </a>
+                                                    </li>
+                                            </ul>
+                                        <!-- 章节小节 end -->
+                </div>
+
+                         
+            <!-- 课程章节 end -->
+        </div><!--content end-->
+
+    </div>
+    <div class="clear"></div>
+
+</div>
+<!-- 视频介绍 -->
+
+
+</div>
+
+<div id="footer" data="course,learn">
+    <div class="waper">
+        <div class="footerwaper clearfix">
+            
+            <div class="footer_intro l">
+                <div class="footer_link">
+                    <ul>
+                        <li><a href="index.html" target="_blank">网站首页</a></li>
+     
+                        <li> <a href="contact.html" target="_blank">联系我们</a></li>
+                  
+                        <li> <a href="contact.html" target="_blank">意见反馈</a></li>
+                  
+                       <!--  <li><a href="/corp/index" target="_blank">合作专区</a></li>
+                        <li><a href="/about/us" target="_blank">关于我们</a></li> -->
+                    </ul>
+                </div>
+                <p>Copyright © 2019 imooc.com All Rights Reserved | 京ICP备 12003892号-11 </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <div id="J_GotoTop" class="elevator">
+
+    <a href="https://www.imooc.com/user/feedback" class="elevator-msg" target="_blank">
+        <i class="icon-feedback"></i>
+        <span class="">意见反馈</span>
+    </a>
+    <a href="https://order.imooc.com/pay/sharegoods" class="elevator-dist" target="_blank">
+        <i class=""></i>
+        <span class="">去赚学费</span>
+    </a>
+    <a href="https://www.imooc.com/help" class="elevator-faq" target="_blank">
+        <i class="icon-ques"></i>
+        <span class="">帮助中心</span>
+    </a>
+    <a href="https://www.imooc.com/mobile/app" target="_blank" class="elevator-app">
+        <i class="icon-appdownload"></i>
+        <span class="">APP下载</span>
+        <div class="elevator-app-box"></div>
+    </a>
+    <a href="javascript:void(0)" class="elevator-weixin no-goto" id="js-elevator-weixin">
+        <i class="icon-wxgzh"></i>
+        <span class="">官方微信</span>
+        <div class="elevator-weixin-box"></div>
+    </a>
+    <a href="javascript:void(0)" class="elevator-top no-goto" style="display:none" id="backTop">
+        <i class="icon-up2"></i>
+        <span class="">返回顶部</span>
+    </a>
+</div> -->
+
+</div>
+
+
+
+
+<!-- <script src="course_files/visual.json"></script><script type="text/javascript" src="course_files/advertisementReport.js"></script> --></body></html>

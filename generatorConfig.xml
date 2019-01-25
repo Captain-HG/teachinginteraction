@@ -69,14 +69,14 @@
 
             <!--&lt;!&ndash;<generatedKey column="c_id" sqlStatement="Mysql" identity="true" />&ndash;&gt;-->
         <!--</table>-->
-        <table tableName="course" domainObjectName="Course">
+        <table tableName="material" domainObjectName="Material">
 
             <!--<generatedKey column="c_id" sqlStatement="Mysql" identity="true" />-->
         </table>
-        <table tableName="advise" domainObjectName="Advise">
+        <!--<table tableName="advise" domainObjectName="Advise">-->
 
-            <!--<generatedKey column="c_id" sqlStatement="Mysql" identity="true" />-->
-        </table>
+            <!--&lt;!&ndash;<generatedKey column="c_id" sqlStatement="Mysql" identity="true" />&ndash;&gt;-->
+        <!--</table>-->
         <!--<table tableName="notice" domainObjectName="Notice">-->
 
             <!--&lt;!&ndash;<generatedKey column="c_id" sqlStatement="Mysql" identity="true" />&ndash;&gt;-->
