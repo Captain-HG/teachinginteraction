@@ -8,6 +8,8 @@ import com.lzc.teachingInteraction.service.CourseServcice;
 import com.lzc.teachingInteraction.service.MaterialService;
 import com.lzc.teachingInteraction.service.TeacherService;
 import com.lzc.teachingInteraction.service.UserService;
+import com.lzc.teachingInteraction.utils.Commons;
+import com.lzc.teachingInteraction.vo.CourseVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -33,7 +35,7 @@ public class CourseController {
      * @Param cId 课程id
      * @return
      */
-    @RequestMapping("course-detail")
+    @RequestMapping("")
     public String courseDetail(Model model,String cId){
         System.out.println("cId:"+cId);
         Course course = courseServcice.selectById(cId);
@@ -46,5 +48,18 @@ public class CourseController {
         model.addAttribute("user",user);
         model.addAttribute("materialList",materialList);
         return "course/course";
+    }
+
+    /**
+     * 跳转到课程列表
+     * @param model
+     * @return
+     */
+    @RequestMapping("course-list.html")
+     public String courseList(Model model){
+        List<CourseVo> courseVos = courseServcice.selectAllVo();
+        model.addAttribute("courseVos",courseVos);
+        model.addAttribute("commons",new Commons());
+        return "course/course-list";
     }
 }

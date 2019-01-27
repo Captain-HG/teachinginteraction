@@ -76,6 +76,8 @@ spring:
   mvc:
     favicon:
       enabled: false
+  thymeleaf:
+    cache: false
 
 mybatis:
   type-aliases-package: com.lzc.teachingInteraction.entity
