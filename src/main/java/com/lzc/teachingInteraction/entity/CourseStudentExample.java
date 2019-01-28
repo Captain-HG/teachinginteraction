@@ -243,6 +243,66 @@ public class CourseStudentExample {
             addCriterion("s_id not between", value1, value2, "sId");
             return (Criteria) this;
         }
+
+        public Criteria andCtimeIsNull() {
+            addCriterion("cTime is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCtimeIsNotNull() {
+            addCriterion("cTime is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCtimeEqualTo(Integer value) {
+            addCriterion("cTime =", value, "ctime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCtimeNotEqualTo(Integer value) {
+            addCriterion("cTime <>", value, "ctime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCtimeGreaterThan(Integer value) {
+            addCriterion("cTime >", value, "ctime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCtimeGreaterThanOrEqualTo(Integer value) {
+            addCriterion("cTime >=", value, "ctime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCtimeLessThan(Integer value) {
+            addCriterion("cTime <", value, "ctime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCtimeLessThanOrEqualTo(Integer value) {
+            addCriterion("cTime <=", value, "ctime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCtimeIn(List<Integer> values) {
+            addCriterion("cTime in", values, "ctime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCtimeNotIn(List<Integer> values) {
+            addCriterion("cTime not in", values, "ctime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCtimeBetween(Integer value1, Integer value2) {
+            addCriterion("cTime between", value1, value2, "ctime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCtimeNotBetween(Integer value1, Integer value2) {
+            addCriterion("cTime not between", value1, value2, "ctime");
+            return (Criteria) this;
+        }
     }
 
     public static class Criteria extends GeneratedCriteria {

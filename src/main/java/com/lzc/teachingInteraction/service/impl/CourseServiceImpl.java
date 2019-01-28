@@ -44,12 +44,12 @@ public class CourseServiceImpl implements CourseServcice {
     private CourseVo replace(Course course) {
         CourseVo courseVo = new CourseVo();
         courseVo.setCId(course.getcId());
-        courseVo.setCName(course.getAdName());
+        courseVo.setCName(course.getcName());
         courseVo.setCLogourl(course.getcLogourl());
         courseVo.setCtime(course.getCtime());
         courseVo.setDetail(course.getDetail());
         //查询老师的名字
-        courseVo.setTName(userService.selectById(teacherService.selectById(course.gettId()).getuId()).getName());
+        courseVo.setTName(userService.selectById(teacherService.selectById(course.gettId()).getuId()).getuName());
         return courseVo;
     }
 }

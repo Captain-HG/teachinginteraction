@@ -8,8 +8,8 @@ public class Subject implements Serializable {
     @Column(name = "sub_id")
     private String subId;
 
-    @Column(name = "c_id")
-    private String cId;
+    @Column(name = "exam_id")
+    private String examId;
 
     @Column(name = "sub_text")
     private String subText;
@@ -54,17 +54,17 @@ public class Subject implements Serializable {
     }
 
     /**
-     * @return c_id
+     * @return exam_id
      */
-    public String getcId() {
-        return cId;
+    public String getExamId() {
+        return examId;
     }
 
     /**
-     * @param cId
+     * @param examId
      */
-    public void setcId(String cId) {
-        this.cId = cId;
+    public void setExamId(String examId) {
+        this.examId = examId;
     }
 
     /**
@@ -200,7 +200,7 @@ public class Subject implements Serializable {
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
         sb.append(", subId=").append(subId);
-        sb.append(", cId=").append(cId);
+        sb.append(", examId=").append(examId);
         sb.append(", subText=").append(subText);
         sb.append(", optionA=").append(optionA);
         sb.append(", optionB=").append(optionB);

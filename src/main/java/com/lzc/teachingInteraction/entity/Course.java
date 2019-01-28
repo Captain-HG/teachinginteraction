@@ -11,8 +11,8 @@ public class Course implements Serializable {
     @Column(name = "t_id")
     private String tId;
 
-    @Column(name = "ad_name")
-    private String adName;
+    @Column(name = "c_name")
+    private String cName;
 
     private String detail;
 
@@ -58,17 +58,17 @@ public class Course implements Serializable {
     }
 
     /**
-     * @return ad_name
+     * @return c_name
      */
-    public String getAdName() {
-        return adName;
+    public String getcName() {
+        return cName;
     }
 
     /**
-     * @param adName
+     * @param cName
      */
-    public void setAdName(String adName) {
-        this.adName = adName;
+    public void setcName(String cName) {
+        this.cName = cName;
     }
 
     /**
@@ -149,7 +149,7 @@ public class Course implements Serializable {
         sb.append("Hash = ").append(hashCode());
         sb.append(", cId=").append(cId);
         sb.append(", tId=").append(tId);
-        sb.append(", adName=").append(adName);
+        sb.append(", cName=").append(cName);
         sb.append(", detail=").append(detail);
         sb.append(", ctime=").append(ctime);
         sb.append(", utime=").append(utime);

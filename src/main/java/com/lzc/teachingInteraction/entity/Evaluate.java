@@ -3,36 +3,51 @@ package com.lzc.teachingInteraction.entity;
 import java.io.Serializable;
 import javax.persistence.*;
 
-public class Material implements Serializable {
+public class Evaluate implements Serializable {
     @Id
+    @Column(name = "e_id")
+    private String eId;
+
     @Column(name = "m_id")
     private String mId;
 
-    @Column(name = "c_id")
-    private String cId;
+    @Column(name = "t_id")
+    private String tId;
 
     @Column(name = "exam_id")
     private String examId;
 
-    @Column(name = "m_type")
-    private String mType;
+    @Column(name = "u_id")
+    private String uId;
 
-    @Column(name = "m_name")
-    private String mName;
+    @Column(name = "c_id")
+    private String cId;
 
-    private Integer size;
-
-    private String url;
+    @Column(name = "e_text")
+    private String eText;
 
     @Column(name = "cTime")
     private Integer ctime;
 
     private String remark;
 
-    @Column(name = "down_num")
-    private Integer downNum;
+    private Byte type;
 
     private static final long serialVersionUID = 1L;
+
+    /**
+     * @return e_id
+     */
+    public String geteId() {
+        return eId;
+    }
+
+    /**
+     * @param eId
+     */
+    public void seteId(String eId) {
+        this.eId = eId;
+    }
 
     /**
      * @return m_id
@@ -49,17 +64,17 @@ public class Material implements Serializable {
     }
 
     /**
-     * @return c_id
+     * @return t_id
      */
-    public String getcId() {
-        return cId;
+    public String gettId() {
+        return tId;
     }
 
     /**
-     * @param cId
+     * @param tId
      */
-    public void setcId(String cId) {
-        this.cId = cId;
+    public void settId(String tId) {
+        this.tId = tId;
     }
 
     /**
@@ -77,59 +92,45 @@ public class Material implements Serializable {
     }
 
     /**
-     * @return m_type
+     * @return u_id
      */
-    public String getmType() {
-        return mType;
+    public String getuId() {
+        return uId;
     }
 
     /**
-     * @param mType
+     * @param uId
      */
-    public void setmType(String mType) {
-        this.mType = mType;
+    public void setuId(String uId) {
+        this.uId = uId;
     }
 
     /**
-     * @return m_name
+     * @return c_id
      */
-    public String getmName() {
-        return mName;
+    public String getcId() {
+        return cId;
     }
 
     /**
-     * @param mName
+     * @param cId
      */
-    public void setmName(String mName) {
-        this.mName = mName;
+    public void setcId(String cId) {
+        this.cId = cId;
     }
 
     /**
-     * @return size
+     * @return e_text
      */
-    public Integer getSize() {
-        return size;
+    public String geteText() {
+        return eText;
     }
 
     /**
-     * @param size
+     * @param eText
      */
-    public void setSize(Integer size) {
-        this.size = size;
-    }
-
-    /**
-     * @return url
-     */
-    public String getUrl() {
-        return url;
-    }
-
-    /**
-     * @param url
-     */
-    public void setUrl(String url) {
-        this.url = url;
+    public void seteText(String eText) {
+        this.eText = eText;
     }
 
     /**
@@ -161,17 +162,17 @@ public class Material implements Serializable {
     }
 
     /**
-     * @return down_num
+     * @return type
      */
-    public Integer getDownNum() {
-        return downNum;
+    public Byte getType() {
+        return type;
     }
 
     /**
-     * @param downNum
+     * @param type
      */
-    public void setDownNum(Integer downNum) {
-        this.downNum = downNum;
+    public void setType(Byte type) {
+        this.type = type;
     }
 
     @Override
@@ -180,16 +181,16 @@ public class Material implements Serializable {
         sb.append(getClass().getSimpleName());
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
+        sb.append(", eId=").append(eId);
         sb.append(", mId=").append(mId);
-        sb.append(", cId=").append(cId);
+        sb.append(", tId=").append(tId);
         sb.append(", examId=").append(examId);
-        sb.append(", mType=").append(mType);
-        sb.append(", mName=").append(mName);
-        sb.append(", size=").append(size);
-        sb.append(", url=").append(url);
+        sb.append(", uId=").append(uId);
+        sb.append(", cId=").append(cId);
+        sb.append(", eText=").append(eText);
         sb.append(", ctime=").append(ctime);
         sb.append(", remark=").append(remark);
-        sb.append(", downNum=").append(downNum);
+        sb.append(", type=").append(type);
         sb.append("]");
         return sb.toString();
     }

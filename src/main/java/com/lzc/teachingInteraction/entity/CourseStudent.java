@@ -13,6 +13,9 @@ public class CourseStudent implements Serializable {
     @Column(name = "s_id")
     private String sId;
 
+    @Column(name = "cTime")
+    private Integer ctime;
+
     private static final long serialVersionUID = 1L;
 
     /**
@@ -43,6 +46,20 @@ public class CourseStudent implements Serializable {
         this.sId = sId;
     }
 
+    /**
+     * @return cTime
+     */
+    public Integer getCtime() {
+        return ctime;
+    }
+
+    /**
+     * @param ctime
+     */
+    public void setCtime(Integer ctime) {
+        this.ctime = ctime;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -51,6 +68,7 @@ public class CourseStudent implements Serializable {
         sb.append("Hash = ").append(hashCode());
         sb.append(", cId=").append(cId);
         sb.append(", sId=").append(sId);
+        sb.append(", ctime=").append(ctime);
         sb.append("]");
         return sb.toString();
     }

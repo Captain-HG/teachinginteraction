@@ -7,4 +7,6 @@ import java.util.List;
 public interface MaterialService {
     /** 根据课程id，查找所有资料*/
     List<Material> selectAllByCId(String cId);
+    /** 主键查询*/
+    Material selectById(String id);
 }

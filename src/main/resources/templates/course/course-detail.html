@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<title th:text="${course.adName}">
+<title th:text="${course.cName}">
     </title>
 
 
@@ -114,7 +114,7 @@ var hasLearn;
                         <i class="path-split">\</i><a href="#"><span>Taro多端框架开发外卖首页</span></a>
         </div>
         <div class="hd clearfix">
-            <h2 class="l" th:text="${course.adName}">首页</h2>
+            <h2 class="l" th:text="${course.cName}">首页</h2>
                     </div>
 
         <div class="statics clearfix">
@@ -123,7 +123,7 @@ var hasLearn;
                 <img data-userid="7376453" class="js-usercard-dialog" src="course_files/5b8cf0be0001b57902000200-80-80.jpg" width="80" height="80">
             </a>
             <span class="tit">
-                <a href="#" target="_blank" th:text="${user.name}"></a><i class="icon-imooc"></i>
+                <a href="#" target="_blank" th:text="${user.uName}"></a><i class="icon-imooc"></i>
             </span>
             <span class="job">老师</span>
                         <div class="teacher-course">
@@ -253,9 +253,9 @@ var hasLearn;
                                                 <li data-media-id="18406" th:each="material, interStat : ${materialList}">
                                                             <a href="#" class="J-media-item"  >
                                     <i class="imv2-play_circle type"></i>
-                                                           <span th:text="${material.name}"></span>
+                                                           <span th:text="${material.mName}" ></span>
                                                                         
-                                                                        <button class="r moco-btn moco-btn-red preview-btn">开始学习</button>
+                                                                        <button class="r moco-btn moco-btn-red preview-btn" th:data-id="${material.mId}" onclick="course_video(this.getAttribute('data-id'))" href="javascript:;">开始学习</button>
                                                                         
                                 </a>
                                                     </li>
@@ -265,7 +265,7 @@ var hasLearn;
                                     1-2 搭建Taro环境 
                                                                             (26:59)
                                                                         
-                                                                        <button class="r moco-btn moco-btn-red preview-btn">开始学习</button>
+                                                                        <button class="r moco-btn moco-btn-red preview-btn"  >开始学习</button>
                                                                         
                                 </a>
                                                     </li>
@@ -341,7 +341,11 @@ var hasLearn;
 
 </div>
 
-
+<script type="text/javascript" th:inline="javascript">
+    function course_video(id) {
+        window.location.href="course-video.html?id="+id;
+    }
+</script>
 
 
 <!-- <script src="course_files/visual.json"></script><script type="text/javascript" src="course_files/advertisementReport.js"></script> --></body></html>

@@ -7,7 +7,7 @@
     -->
     <id column="u_id" jdbcType="VARCHAR" property="uId" />
     <result column="account" jdbcType="INTEGER" property="account" />
-    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="u_name" jdbcType="VARCHAR" property="uName" />
     <result column="password" jdbcType="VARCHAR" property="password" />
     <result column="type" jdbcType="TINYINT" property="type" />
     <result column="sex" jdbcType="TINYINT" property="sex" />
@@ -86,7 +86,7 @@
     <!--
       WARNING - @mbg.generated
     -->
-    u_id, account, name, password, type, sex, state, cTime, onTime, headImg, detail, 
+    u_id, account, u_name, password, type, sex, state, cTime, onTime, headImg, detail, 
     remark
   </sql>
 

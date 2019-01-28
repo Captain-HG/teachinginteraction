@@ -7,7 +7,7 @@
     -->
     <id column="c_id" jdbcType="VARCHAR" property="cId" />
     <result column="t_id" jdbcType="VARCHAR" property="tId" />
-    <result column="ad_name" jdbcType="VARCHAR" property="adName" />
+    <result column="c_name" jdbcType="VARCHAR" property="cName" />
     <result column="detail" jdbcType="VARCHAR" property="detail" />
     <result column="cTime" jdbcType="INTEGER" property="ctime" />
     <result column="uTime" jdbcType="INTEGER" property="utime" />
@@ -82,7 +82,7 @@
     <!--
       WARNING - @mbg.generated
     -->
-    c_id, t_id, ad_name, detail, cTime, uTime, chance, c_logoUrl
+    c_id, t_id, c_name, detail, cTime, uTime, chance, c_logoUrl
   </sql>
 
 </mapper>

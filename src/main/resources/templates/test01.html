@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <!--<button th:onclick="'javascript:course_video(\''+${mmp}+'\')'" href="javascript:;" >mmp</button>-->
+  <button th:data-id="${mmp}" onclick="course_video(this.getAttribute('data-id'))"></button>
+</body>
+<script type="text/javascript" th:inline="javascript">
+    function course_video(id) {
+        window.location.href="course-video.html?id="+id;
+    }
+</script>
+</html>

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.lzc.teachingInteraction.mapper.TeacherMapper">
-  <resultMap id="BaseResultMap" type="com.lzc.teachingInteraction.entity.Teacher">
+<mapper namespace="com.lzc.teachingInteraction.mapper.UserMaterialMapper">
+  <resultMap id="BaseResultMap" type="com.lzc.teachingInteraction.entity.UserMaterial">
     <!--
       WARNING - @mbg.generated
     -->
-    <id column="t_id" jdbcType="VARCHAR" property="tId" />
-    <result column="u_id" jdbcType="VARCHAR" property="uId" />
-    <result column="school_name" jdbcType="VARCHAR" property="schoolName" />
+    <id column="u_id" jdbcType="VARCHAR" property="uId" />
+    <id column="m_id" jdbcType="VARCHAR" property="mId" />
+    <result column="cTime" jdbcType="INTEGER" property="ctime" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <!--
@@ -77,7 +77,7 @@
     <!--
       WARNING - @mbg.generated
     -->
-    t_id, u_id, school_name
+    u_id, m_id, cTime
   </sql>
 
 </mapper>

@@ -7,13 +7,14 @@
     -->
     <id column="m_id" jdbcType="VARCHAR" property="mId" />
     <result column="c_id" jdbcType="VARCHAR" property="cId" />
+    <result column="exam_id" jdbcType="VARCHAR" property="examId" />
     <result column="m_type" jdbcType="VARCHAR" property="mType" />
-    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="m_name" jdbcType="VARCHAR" property="mName" />
     <result column="size" jdbcType="INTEGER" property="size" />
     <result column="url" jdbcType="VARCHAR" property="url" />
     <result column="cTime" jdbcType="INTEGER" property="ctime" />
     <result column="remark" jdbcType="VARCHAR" property="remark" />
-    <result column="downNumber" jdbcType="INTEGER" property="downnumber" />
+    <result column="down_num" jdbcType="INTEGER" property="downNum" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <!--
@@ -83,9 +84,9 @@
     <!--
       WARNING - @mbg.generated
     -->
-    m_id, c_id, m_type, name, size, url, cTime, remark, downNumber
+    m_id, c_id, exam_id, m_type, m_name, size, url, cTime, remark, down_num
   </sql>
-<select id="selectAllByCId" resultMap="BaseResultMap">
-  select * from material where c_id=#{cId}
-</select>
+  <select id="selectAllByCId" resultMap="BaseResultMap">
+    select * from material where c_id=#{cId}
+  </select>
 </mapper>

@@ -11,6 +11,9 @@ public class Teacher implements Serializable {
     @Column(name = "u_id")
     private String uId;
 
+    @Column(name = "school_name")
+    private String schoolName;
+
     private static final long serialVersionUID = 1L;
 
     /**
@@ -41,6 +44,20 @@ public class Teacher implements Serializable {
         this.uId = uId;
     }
 
+    /**
+     * @return school_name
+     */
+    public String getSchoolName() {
+        return schoolName;
+    }
+
+    /**
+     * @param schoolName
+     */
+    public void setSchoolName(String schoolName) {
+        this.schoolName = schoolName;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -49,6 +66,7 @@ public class Teacher implements Serializable {
         sb.append("Hash = ").append(hashCode());
         sb.append(", tId=").append(tId);
         sb.append(", uId=").append(uId);
+        sb.append(", schoolName=").append(schoolName);
         sb.append("]");
         return sb.toString();
     }

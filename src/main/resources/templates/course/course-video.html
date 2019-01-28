@@ -53,9 +53,9 @@
     <dl class="video_con">
                 <figure class="video_con_show tab">
                     <div class="video_bofang tab-box">
-                        <dt class="video_con_title"><b style="font-size: 30px;">视频标题：</b><span id="video_con_title">你的名字</span></dt>
+                        <dt class="video_con_title"><b style="font-size: 30px;">视频标题：</b><span id="video_con_title" th:text="${material.mName}"></span></dt>
 
-                       <iframe id="iframe_video" src="course-video_files/name_002.mp4"  width="900" height="512" frameborder="0">
+                       <iframe id="iframe_video" th:src="${material.url}"  width="900" height="512" frameborder="0">
                         </iframe>
                         <div class="video_bofang_mtbd">
                            <div id="scroll" class="scroll clearfix">
@@ -64,9 +64,13 @@
                                 
                                 
                               <li>热门：<script type="text/javascript">document.writeln(str1)</script><a href="https://blog.retechs.cn/">随机链接</a>
-</li><li>热门：<script type="text/javascript">document.writeln(str1)</script><a href="https://blog.retechs.cn/">随机链接</a>
-</li><li>热门：<script type="text/javascript">document.writeln(str1)</script><a href="https://blog.retechs.cn/">随机链接</a>
-</li></ul>
+</li>
+                                  <li>热门：<script type="text/javascript">document.writeln(str1)</script><a th:href="'course-down?mId='+${material.mId}">下载</a>
+</li>
+
+                                  <li>热门：<script type="text/javascript">document.writeln(str1)</script><a th:href="'course-down?mId='+${material.mId}">下载</a>
+                                  </li>
+                              </ul>
                             </div>
                     </div>
                 </div>  

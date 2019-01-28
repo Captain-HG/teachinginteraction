@@ -7,4 +7,6 @@ import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 public interface SubjectMapper extends IBaseMapper<Subject> {
-  }
+    /** 根据考试id查询题目*/
+    List<Subject> selectALLByEId(String eId);
+}

@@ -1,20 +1,18 @@
 package com.lzc.teachingInteraction.controller.course;
 
-import com.lzc.teachingInteraction.entity.Course;
-import com.lzc.teachingInteraction.entity.Material;
-import com.lzc.teachingInteraction.entity.Teacher;
-import com.lzc.teachingInteraction.entity.User;
-import com.lzc.teachingInteraction.service.CourseServcice;
-import com.lzc.teachingInteraction.service.MaterialService;
-import com.lzc.teachingInteraction.service.TeacherService;
-import com.lzc.teachingInteraction.service.UserService;
+import com.lzc.teachingInteraction.entity.*;
+import com.lzc.teachingInteraction.service.*;
 import com.lzc.teachingInteraction.utils.Commons;
+import com.lzc.teachingInteraction.utils.FileUtils;
 import com.lzc.teachingInteraction.vo.CourseVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 /**
@@ -30,12 +28,14 @@ public class CourseController {
     UserService userService;
     @Autowired
     MaterialService materialService;
+    @Autowired
+    SubjectService subjectService;
     /**
      * 跳转到课程详情
      * @Param cId 课程id
      * @return
      */
-    @RequestMapping("")
+    @RequestMapping("course-detail")
     public String courseDetail(Model model,String cId){
         System.out.println("cId:"+cId);
         Course course = courseServcice.selectById(cId);
@@ -47,7 +47,7 @@ public class CourseController {
         model.addAttribute("course",course);
         model.addAttribute("user",user);
         model.addAttribute("materialList",materialList);
-        return "course/course";
+        return "course/course-detail";
     }
 
     /**
@@ -61,5 +61,45 @@ public class CourseController {
         model.addAttribute("courseVos",courseVos);
         model.addAttribute("commons",new Commons());
         return "course/course-list";
+    }
+
+    /**
+     * 跳转到课程的视频页
+     * @param id 资料id
+     * @param model
+     * @return
+     */
+    @RequestMapping("course-video.html")
+    public  String  courseVideo(String id,Model model){
+        Material material = materialService.selectById(id);
+        model.addAttribute("material",material);
+        return "course/course-video";
+    }
+
+    /**
+     * 课程视频、文件下载
+     * @param request
+     * @param response
+     * @param mId 课程id
+     * @return
+     */
+    @RequestMapping("course-down")
+    @ResponseBody
+    public String courseDown(HttpServletRequest request, HttpServletResponse response,String mId){
+        String fileName = materialService.selectById(mId).getUrl();
+        return FileUtils.downloadFile(request,response,fileName);
+    }
+
+    /**
+     * 答题网页
+     * @param model
+     * @param eId
+     * @return
+     */
+    @RequestMapping("course-answer.html")
+    public String courseAnswer(Model model,String eId){
+        List<Subject> subjectList = subjectService.selectALLByEId(eId);
+        model.addAttribute("subjectList",subjectList);
+        return "course/course-answer";
     }
 }

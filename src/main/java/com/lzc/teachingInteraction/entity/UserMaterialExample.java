@@ -3,14 +3,14 @@ package com.lzc.teachingInteraction.entity;
 import java.util.ArrayList;
 import java.util.List;
 
-public class StudentSubjectExample {
+public class UserMaterialExample {
     protected String orderByClause;
 
     protected boolean distinct;
 
     protected List<Criteria> oredCriteria;
 
-    public StudentSubjectExample() {
+    public UserMaterialExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 
@@ -104,143 +104,203 @@ public class StudentSubjectExample {
             criteria.add(new Criterion(condition, value1, value2));
         }
 
-        public Criteria andSIdIsNull() {
-            addCriterion("s_id is null");
+        public Criteria andUIdIsNull() {
+            addCriterion("u_id is null");
             return (Criteria) this;
         }
 
-        public Criteria andSIdIsNotNull() {
-            addCriterion("s_id is not null");
+        public Criteria andUIdIsNotNull() {
+            addCriterion("u_id is not null");
             return (Criteria) this;
         }
 
-        public Criteria andSIdEqualTo(String value) {
-            addCriterion("s_id =", value, "sId");
+        public Criteria andUIdEqualTo(String value) {
+            addCriterion("u_id =", value, "uId");
             return (Criteria) this;
         }
 
-        public Criteria andSIdNotEqualTo(String value) {
-            addCriterion("s_id <>", value, "sId");
+        public Criteria andUIdNotEqualTo(String value) {
+            addCriterion("u_id <>", value, "uId");
             return (Criteria) this;
         }
 
-        public Criteria andSIdGreaterThan(String value) {
-            addCriterion("s_id >", value, "sId");
+        public Criteria andUIdGreaterThan(String value) {
+            addCriterion("u_id >", value, "uId");
             return (Criteria) this;
         }
 
-        public Criteria andSIdGreaterThanOrEqualTo(String value) {
-            addCriterion("s_id >=", value, "sId");
+        public Criteria andUIdGreaterThanOrEqualTo(String value) {
+            addCriterion("u_id >=", value, "uId");
             return (Criteria) this;
         }
 
-        public Criteria andSIdLessThan(String value) {
-            addCriterion("s_id <", value, "sId");
+        public Criteria andUIdLessThan(String value) {
+            addCriterion("u_id <", value, "uId");
             return (Criteria) this;
         }
 
-        public Criteria andSIdLessThanOrEqualTo(String value) {
-            addCriterion("s_id <=", value, "sId");
+        public Criteria andUIdLessThanOrEqualTo(String value) {
+            addCriterion("u_id <=", value, "uId");
             return (Criteria) this;
         }
 
-        public Criteria andSIdLike(String value) {
-            addCriterion("s_id like", value, "sId");
+        public Criteria andUIdLike(String value) {
+            addCriterion("u_id like", value, "uId");
             return (Criteria) this;
         }
 
-        public Criteria andSIdNotLike(String value) {
-            addCriterion("s_id not like", value, "sId");
+        public Criteria andUIdNotLike(String value) {
+            addCriterion("u_id not like", value, "uId");
             return (Criteria) this;
         }
 
-        public Criteria andSIdIn(List<String> values) {
-            addCriterion("s_id in", values, "sId");
+        public Criteria andUIdIn(List<String> values) {
+            addCriterion("u_id in", values, "uId");
             return (Criteria) this;
         }
 
-        public Criteria andSIdNotIn(List<String> values) {
-            addCriterion("s_id not in", values, "sId");
+        public Criteria andUIdNotIn(List<String> values) {
+            addCriterion("u_id not in", values, "uId");
             return (Criteria) this;
         }
 
-        public Criteria andSIdBetween(String value1, String value2) {
-            addCriterion("s_id between", value1, value2, "sId");
+        public Criteria andUIdBetween(String value1, String value2) {
+            addCriterion("u_id between", value1, value2, "uId");
             return (Criteria) this;
         }
 
-        public Criteria andSIdNotBetween(String value1, String value2) {
-            addCriterion("s_id not between", value1, value2, "sId");
+        public Criteria andUIdNotBetween(String value1, String value2) {
+            addCriterion("u_id not between", value1, value2, "uId");
             return (Criteria) this;
         }
 
-        public Criteria andSubIdIsNull() {
-            addCriterion("sub_id is null");
+        public Criteria andMIdIsNull() {
+            addCriterion("m_id is null");
             return (Criteria) this;
         }
 
-        public Criteria andSubIdIsNotNull() {
-            addCriterion("sub_id is not null");
+        public Criteria andMIdIsNotNull() {
+            addCriterion("m_id is not null");
             return (Criteria) this;
         }
 
-        public Criteria andSubIdEqualTo(String value) {
-            addCriterion("sub_id =", value, "subId");
+        public Criteria andMIdEqualTo(String value) {
+            addCriterion("m_id =", value, "mId");
             return (Criteria) this;
         }
 
-        public Criteria andSubIdNotEqualTo(String value) {
-            addCriterion("sub_id <>", value, "subId");
+        public Criteria andMIdNotEqualTo(String value) {
+            addCriterion("m_id <>", value, "mId");
             return (Criteria) this;
         }
 
-        public Criteria andSubIdGreaterThan(String value) {
-            addCriterion("sub_id >", value, "subId");
+        public Criteria andMIdGreaterThan(String value) {
+            addCriterion("m_id >", value, "mId");
             return (Criteria) this;
         }
 
-        public Criteria andSubIdGreaterThanOrEqualTo(String value) {
-            addCriterion("sub_id >=", value, "subId");
+        public Criteria andMIdGreaterThanOrEqualTo(String value) {
+            addCriterion("m_id >=", value, "mId");
             return (Criteria) this;
         }
 
-        public Criteria andSubIdLessThan(String value) {
-            addCriterion("sub_id <", value, "subId");
+        public Criteria andMIdLessThan(String value) {
+            addCriterion("m_id <", value, "mId");
             return (Criteria) this;
         }
 
-        public Criteria andSubIdLessThanOrEqualTo(String value) {
-            addCriterion("sub_id <=", value, "subId");
+        public Criteria andMIdLessThanOrEqualTo(String value) {
+            addCriterion("m_id <=", value, "mId");
             return (Criteria) this;
         }
 
-        public Criteria andSubIdLike(String value) {
-            addCriterion("sub_id like", value, "subId");
+        public Criteria andMIdLike(String value) {
+            addCriterion("m_id like", value, "mId");
             return (Criteria) this;
         }
 
-        public Criteria andSubIdNotLike(String value) {
-            addCriterion("sub_id not like", value, "subId");
+        public Criteria andMIdNotLike(String value) {
+            addCriterion("m_id not like", value, "mId");
             return (Criteria) this;
         }
 
-        public Criteria andSubIdIn(List<String> values) {
-            addCriterion("sub_id in", values, "subId");
+        public Criteria andMIdIn(List<String> values) {
+            addCriterion("m_id in", values, "mId");
             return (Criteria) this;
         }
 
-        public Criteria andSubIdNotIn(List<String> values) {
-            addCriterion("sub_id not in", values, "subId");
+        public Criteria andMIdNotIn(List<String> values) {
+            addCriterion("m_id not in", values, "mId");
             return (Criteria) this;
         }
 
-        public Criteria andSubIdBetween(String value1, String value2) {
-            addCriterion("sub_id between", value1, value2, "subId");
+        public Criteria andMIdBetween(String value1, String value2) {
+            addCriterion("m_id between", value1, value2, "mId");
             return (Criteria) this;
         }
 
-        public Criteria andSubIdNotBetween(String value1, String value2) {
-            addCriterion("sub_id not between", value1, value2, "subId");
+        public Criteria andMIdNotBetween(String value1, String value2) {
+            addCriterion("m_id not between", value1, value2, "mId");
+            return (Criteria) this;
+        }
+
+        public Criteria andCtimeIsNull() {
+            addCriterion("cTime is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCtimeIsNotNull() {
+            addCriterion("cTime is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCtimeEqualTo(Integer value) {
+            addCriterion("cTime =", value, "ctime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCtimeNotEqualTo(Integer value) {
+            addCriterion("cTime <>", value, "ctime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCtimeGreaterThan(Integer value) {
+            addCriterion("cTime >", value, "ctime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCtimeGreaterThanOrEqualTo(Integer value) {
+            addCriterion("cTime >=", value, "ctime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCtimeLessThan(Integer value) {
+            addCriterion("cTime <", value, "ctime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCtimeLessThanOrEqualTo(Integer value) {
+            addCriterion("cTime <=", value, "ctime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCtimeIn(List<Integer> values) {
+            addCriterion("cTime in", values, "ctime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCtimeNotIn(List<Integer> values) {
+            addCriterion("cTime not in", values, "ctime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCtimeBetween(Integer value1, Integer value2) {
+            addCriterion("cTime between", value1, value2, "ctime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCtimeNotBetween(Integer value1, Integer value2) {
+            addCriterion("cTime not between", value1, value2, "ctime");
             return (Criteria) this;
         }
     }

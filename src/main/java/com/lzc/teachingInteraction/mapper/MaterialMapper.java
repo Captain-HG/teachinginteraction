@@ -7,6 +7,6 @@ import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 public interface MaterialMapper extends IBaseMapper<Material> {
-    /** 根据课程id，查询所有资料*/
+    /** 查询所有更具课程id*/
     List<Material> selectAllByCId(String cId);
 }

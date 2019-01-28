@@ -10,7 +10,8 @@ public class User implements Serializable {
 
     private Integer account;
 
-    private String name;
+    @Column(name = "u_name")
+    private String uName;
 
     private String password;
 
@@ -64,17 +65,17 @@ public class User implements Serializable {
     }
 
     /**
-     * @return name
+     * @return u_name
      */
-    public String getName() {
-        return name;
+    public String getuName() {
+        return uName;
     }
 
     /**
-     * @param name
+     * @param uName
      */
-    public void setName(String name) {
-        this.name = name;
+    public void setuName(String uName) {
+        this.uName = uName;
     }
 
     /**
@@ -211,7 +212,7 @@ public class User implements Serializable {
         sb.append("Hash = ").append(hashCode());
         sb.append(", uId=").append(uId);
         sb.append(", account=").append(account);
-        sb.append(", name=").append(name);
+        sb.append(", uName=").append(uName);
         sb.append(", password=").append(password);
         sb.append(", type=").append(type);
         sb.append(", sex=").append(sex);

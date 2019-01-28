@@ -174,73 +174,73 @@ public class SubjectExample {
             return (Criteria) this;
         }
 
-        public Criteria andCIdIsNull() {
-            addCriterion("c_id is null");
+        public Criteria andExamIdIsNull() {
+            addCriterion("exam_id is null");
             return (Criteria) this;
         }
 
-        public Criteria andCIdIsNotNull() {
-            addCriterion("c_id is not null");
+        public Criteria andExamIdIsNotNull() {
+            addCriterion("exam_id is not null");
             return (Criteria) this;
         }
 
-        public Criteria andCIdEqualTo(String value) {
-            addCriterion("c_id =", value, "cId");
+        public Criteria andExamIdEqualTo(String value) {
+            addCriterion("exam_id =", value, "examId");
             return (Criteria) this;
         }
 
-        public Criteria andCIdNotEqualTo(String value) {
-            addCriterion("c_id <>", value, "cId");
+        public Criteria andExamIdNotEqualTo(String value) {
+            addCriterion("exam_id <>", value, "examId");
             return (Criteria) this;
         }
 
-        public Criteria andCIdGreaterThan(String value) {
-            addCriterion("c_id >", value, "cId");
+        public Criteria andExamIdGreaterThan(String value) {
+            addCriterion("exam_id >", value, "examId");
             return (Criteria) this;
         }
 
-        public Criteria andCIdGreaterThanOrEqualTo(String value) {
-            addCriterion("c_id >=", value, "cId");
+        public Criteria andExamIdGreaterThanOrEqualTo(String value) {
+            addCriterion("exam_id >=", value, "examId");
             return (Criteria) this;
         }
 
-        public Criteria andCIdLessThan(String value) {
-            addCriterion("c_id <", value, "cId");
+        public Criteria andExamIdLessThan(String value) {
+            addCriterion("exam_id <", value, "examId");
             return (Criteria) this;
         }
 
-        public Criteria andCIdLessThanOrEqualTo(String value) {
-            addCriterion("c_id <=", value, "cId");
+        public Criteria andExamIdLessThanOrEqualTo(String value) {
+            addCriterion("exam_id <=", value, "examId");
             return (Criteria) this;
         }
 
-        public Criteria andCIdLike(String value) {
-            addCriterion("c_id like", value, "cId");
+        public Criteria andExamIdLike(String value) {
+            addCriterion("exam_id like", value, "examId");
             return (Criteria) this;
         }
 
-        public Criteria andCIdNotLike(String value) {
-            addCriterion("c_id not like", value, "cId");
+        public Criteria andExamIdNotLike(String value) {
+            addCriterion("exam_id not like", value, "examId");
             return (Criteria) this;
         }
 
-        public Criteria andCIdIn(List<String> values) {
-            addCriterion("c_id in", values, "cId");
+        public Criteria andExamIdIn(List<String> values) {
+            addCriterion("exam_id in", values, "examId");
             return (Criteria) this;
         }
 
-        public Criteria andCIdNotIn(List<String> values) {
-            addCriterion("c_id not in", values, "cId");
+        public Criteria andExamIdNotIn(List<String> values) {
+            addCriterion("exam_id not in", values, "examId");
             return (Criteria) this;
         }
 
-        public Criteria andCIdBetween(String value1, String value2) {
-            addCriterion("c_id between", value1, value2, "cId");
+        public Criteria andExamIdBetween(String value1, String value2) {
+            addCriterion("exam_id between", value1, value2, "examId");
             return (Criteria) this;
         }
 
-        public Criteria andCIdNotBetween(String value1, String value2) {
-            addCriterion("c_id not between", value1, value2, "cId");
+        public Criteria andExamIdNotBetween(String value1, String value2) {
+            addCriterion("exam_id not between", value1, value2, "examId");
             return (Criteria) this;
         }
 

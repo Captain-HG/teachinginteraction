@@ -17,4 +17,9 @@ public class MaterialServiceImpl implements MaterialService {
     public List<Material> selectAllByCId(String cId) {
         return materialMapper.selectAllByCId(cId);
     }
+
+    @Override
+    public Material selectById(String id) {
+        return materialMapper.selectByPrimaryKey(id);
+    }
 }

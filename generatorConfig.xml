@@ -69,10 +69,10 @@
 
             <!--&lt;!&ndash;<generatedKey column="c_id" sqlStatement="Mysql" identity="true" />&ndash;&gt;-->
         <!--</table>-->
-        <table tableName="material" domainObjectName="Material">
+        <!--<table tableName="material" domainObjectName="Material">-->
 
-            <!--<generatedKey column="c_id" sqlStatement="Mysql" identity="true" />-->
-        </table>
+            <!--&lt;!&ndash;<generatedKey column="c_id" sqlStatement="Mysql" identity="true" />&ndash;&gt;-->
+        <!--</table>-->
         <!--<table tableName="advise" domainObjectName="Advise">-->
 
             <!--&lt;!&ndash;<generatedKey column="c_id" sqlStatement="Mysql" identity="true" />&ndash;&gt;-->
@@ -81,22 +81,30 @@
 
             <!--&lt;!&ndash;<generatedKey column="c_id" sqlStatement="Mysql" identity="true" />&ndash;&gt;-->
         <!--</table>-->
-        <!--<table tableName="material" domainObjectName="Material">-->
+        <!--<table tableName="exam" domainObjectName="Exam">-->
 
             <!--&lt;!&ndash;<generatedKey column="c_id" sqlStatement="Mysql" identity="true" />&ndash;&gt;-->
         <!--</table>-->
-        <!--<table tableName="student_subject">-->
+        <!--<table tableName="course" domainObjectName="Course">-->
 
             <!--&lt;!&ndash;<generatedKey column="c_id" sqlStatement="Mysql" identity="true" />&ndash;&gt;-->
         <!--</table>-->
-        <!--<table tableName="student_material">-->
+        <!--<table tableName="evaluate" domainObjectName="Evaluate">-->
 
             <!--&lt;!&ndash;<generatedKey column="c_id" sqlStatement="Mysql" identity="true" />&ndash;&gt;-->
         <!--</table>-->
-        <!--<table tableName="course_student">-->
+        <table tableName="user_exam">
 
-            <!--&lt;!&ndash;<generatedKey column="c_id" sqlStatement="Mysql" identity="true" />&ndash;&gt;-->
-        <!--</table>-->
+            <!--<generatedKey column="c_id" sqlStatement="Mysql" identity="true" />-->
+        </table>
+        <table tableName="user_material">
+
+            <!--<generatedKey column="c_id" sqlStatement="Mysql" identity="true" />-->
+        </table>
+        <table tableName="course_student">
+
+            <!--<generatedKey column="c_id" sqlStatement="Mysql" identity="true" />-->
+        </table>
         <!--<table tableName="review" domainObjectName="Review">-->
 
             <!--&lt;!&ndash;<generatedKey column="c_id" sqlStatement="Mysql" identity="true" />&ndash;&gt;-->

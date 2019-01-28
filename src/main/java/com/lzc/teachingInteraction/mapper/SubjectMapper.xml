@@ -6,7 +6,7 @@
       WARNING - @mbg.generated
     -->
     <id column="sub_id" jdbcType="VARCHAR" property="subId" />
-    <result column="c_id" jdbcType="VARCHAR" property="cId" />
+    <result column="exam_id" jdbcType="VARCHAR" property="examId" />
     <result column="sub_text" jdbcType="VARCHAR" property="subText" />
     <result column="option_A" jdbcType="VARCHAR" property="optionA" />
     <result column="option_B" jdbcType="VARCHAR" property="optionB" />
@@ -85,8 +85,10 @@
     <!--
       WARNING - @mbg.generated
     -->
-    sub_id, c_id, sub_text, option_A, option_B, option_C, option_D, sub_sure, cTime, 
+    sub_id, exam_id, sub_text, option_A, option_B, option_C, option_D, sub_sure, cTime, 
     uTime, remark
   </sql>
-
+  <select id="selectALLByEId" resultMap="BaseResultMap">
+    select * from subject where exam_id=#{eId}
+  </select>
 </mapper>
