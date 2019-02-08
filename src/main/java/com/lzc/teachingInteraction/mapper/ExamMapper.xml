@@ -84,5 +84,10 @@
     -->
     exam_id, m_id, c_id, score, cTime, remark, exame_time, type
   </sql>
-
+  <select id="selectByMId" resultMap="BaseResultMap">
+    select * from exam where m_id=#{mId}
+  </select>
+  <select id="selectByCIdAndType" resultMap="BaseResultMap">
+    select * from exam where c_id=#{cId} and type=#{examTypeLast}
+  </select>
 </mapper>

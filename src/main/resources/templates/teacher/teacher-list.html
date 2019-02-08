@@ -9,7 +9,7 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>Academy - Education Course Template</title>
+    <title>老师列表</title>
 
     <!-- Favicon -->
     <link rel="icon" href="img/core-img/favicon.ico">
@@ -70,6 +70,7 @@
                             <div class="classynav">
                                 <ul>
                                     <li><a href="index.html">首页</a></li>
+
                                     <li><a href="about-us.html">关于我们</a></li>
                                     <li><a href="course.html">课程</a></li>
                                     <li><a href="contact.html">联系我们</a></li>
@@ -95,7 +96,7 @@
     <!-- ##### Breadcumb Area Start ##### -->
     <div class="breadcumb-area bg-img" style="background-image: url(img/bg-img/breadcumb.jpg);">
         <div class="bradcumbContent">
-            <h2>我们的课程</h2>
+            <h2>我们的 老师</h2>
         </div>
     </div>
     <!-- ##### Breadcumb Area End ##### -->
@@ -107,7 +108,7 @@
                 <div class="col-12">
                     <div class="section-heading text-center mx-auto wow fadeInUp" data-wow-delay="300ms">
                         <span>The Best</span>
-                        <h3>最为火热流行的课程</h3>
+                        <h3>我们优秀的老师</h3>
                     </div>
                 </div>
             </div>
@@ -116,12 +117,11 @@
 
 
                 <!-- Single Top Popular Course -->
-                <div class="col-12 col-lg-6" th:each="cVo, interStat : ${courseVos}">
+                <div class="col-12 col-lg-6" th:each="user, interStat : ${userList}">
                     <div class="single-top-popular-course d-flex align-items-center flex-wrap mb-30 wow fadeInUp" data-wow-delay="500ms">
                         <div class="popular-course-content">
-                            <h5 th:text="${cVo.CName}"></h5>
-                            老师:<span th:text="${cVo.TName}"></span>
-                              创建时间:<span th:text="${commons.fmtdate(cVo.ctime)}"> </span>
+                            老师:<span th:text="${user.uName}"></span>
+                              创建时间:<span th:text="${commons.fmtdate(user.ctime)}"> </span>
                             <div class="course-ratings">
                                 <i class="fa fa-star" aria-hidden="true"></i>
                                 <i class="fa fa-star" aria-hidden="true"></i>
@@ -129,11 +129,11 @@
                                 <i class="fa fa-star" aria-hidden="true"></i>
                                 <i class="fa fa-star-o" aria-hidden="true"></i>
                             </div>
-                            <p th:text="${cVo.detail}"></p>
-                            <a th:href="@{'course-detail?cId='+${cVo.getCId()}}" class="btn academy-btn btn-sm">See More</a>
+                            <p th:text="${user.detail}"></p>
+                            <a th:href="'user-detail?uId='+${user.uId}" class="btn academy-btn btn-sm">See More</a>
                         </div>
                         <!--th:style    设置样式    　　　　　　　　th:style="'display:' + @{(${sitrue} ? 'none' : 'inline-block')} + ''"-->
-                        <div class="popular-course-thumb bg-img" th:style="'background-image: url('+${cVo.CLogourl}+');'"></div>
+                        <div class="popular-course-thumb bg-img" th:style="'background-image: url('+${user.headimg}+');'"></div>
                     </div>
                 </div>
 

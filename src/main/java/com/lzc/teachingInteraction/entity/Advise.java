@@ -19,6 +19,8 @@ public class Advise implements Serializable {
 
     private String remark;
 
+    private String message;
+
     private static final long serialVersionUID = 1L;
 
     /**
@@ -91,6 +93,20 @@ public class Advise implements Serializable {
         this.remark = remark;
     }
 
+    /**
+     * @return message
+     */
+    public String getMessage() {
+        return message;
+    }
+
+    /**
+     * @param message
+     */
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -102,6 +118,7 @@ public class Advise implements Serializable {
         sb.append(", adName=").append(adName);
         sb.append(", adEmail=").append(adEmail);
         sb.append(", remark=").append(remark);
+        sb.append(", message=").append(message);
         sb.append("]");
         return sb.toString();
     }

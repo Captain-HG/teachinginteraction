@@ -91,4 +91,8 @@
   <select id="selectALLByEId" resultMap="BaseResultMap">
     select * from subject where exam_id=#{eId}
   </select>
+  <select id="selectSureByEId" resultType="Integer">
+    select sub_sure from subject where exam_id=#{eId}
+  </select>
+
 </mapper>

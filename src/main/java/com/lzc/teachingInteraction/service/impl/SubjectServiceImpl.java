@@ -19,4 +19,10 @@ public class SubjectServiceImpl implements SubjectService {
     public List<Subject> selectALLByEId(String eId) {
         return subjectMapper.selectALLByEId(eId);
     }
-}
+
+    @Override
+    public List<Integer> selectSureByEId(String eId) {
+        return subjectMapper.selectSureByEId(eId);
+    }
+
+   }

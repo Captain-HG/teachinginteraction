@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<title th:text="${course.cName}">
+<title th:text="${course.cName}">的评价
     </title>
 
 
@@ -16,7 +16,6 @@
 
 <link rel="stylesheet" href="course_files/moco.css" type="text/css">
     <link rel="stylesheet" href="course_files/swiper-3.css">
-
 
 
 
@@ -49,6 +48,7 @@ var hasLearn;
 
 
 
+
 <link rel="stylesheet" href="course_files/share_style0_16.css">
 <link charset="utf-8" rel="stylesheet" href="course_files/layer.css">
 <link rel="stylesheet" href="course_files/a.css" type="text/css">
@@ -68,8 +68,8 @@ var hasLearn;
         <div class="path">  
             <a href="course-list.html">课程列表</a>
                         <i class="path-split">\</i>
-                                    <a href="#" th:text="${course.cName}"></a>
-
+                                  <a th:href="'course-detail?cId='+${course.cId}" th:text="${course.cName}"></a>
+                        <i class="path-split">\</i><a href="#"><span>评价</span></a>
         </div>
         <div class="hd clearfix">
             <h2 class="l" th:text="${course.cName}">首页</h2>
@@ -175,7 +175,8 @@ var hasLearn;
 	<div class="w">
 		<ul class="course-menu">
 			<li><a class="moco-change-big-btn active" id="learnOn" href="#">课程章节</a></li>
-			<li><span>8</span><a id="commentOn" class="moco-change-big-btn " th:href="'course-evaluate.html?cId='+${course.cId}">用户评价</a></li>
+
+			<li><span>8</span><a id="commentOn" class="moco-change-big-btn " href="#">用户评价</a></li>
 
 		</ul>
 	</div>
@@ -188,45 +189,45 @@ var hasLearn;
 
     <div class="content-wrap clearfix">
         <div class="content">
-                        <!-- 课程简介 -->
-            <div class="course-description course-wrap" th:text="${course.detail}">
 
-            </div>
-            <!-- 课程简介 end -->
+
     
             <!-- 课程章节 -->
-            <div class="course-chapters">
-                                        <div class="chapter course-wrap ">
-                    <!-- 章节标题 -->
-                    <h3>
-                       详细资料及视频
-                    </h3>
+            <div class="course-chapters" th:each="evo, interStat : ${evaluateCourseVos}">
+                                        <div class="chapter course-wrap " >
 
-                    <!-- 章节标题 end -->
-                    <!-- 章节小节 -->
-                                        <ul class="video">
-                                                <li data-media-id="18406" th:each="material, interStat : ${materialList}">
-                                                            <a href="#" class="J-media-item"  >
-                                    <i class="imv2-play_circle type"></i>
-                                                           <span th:text="${material.mName}" ></span>
+                                                <div class="evaluation-con">
+                                                    <a href="#" class="img-box">
+                                                        <div style=" width: 34px;height: 34px;display: flex;border-radius: 50%;align-items: center;justify-content: center;overflow: hidden;">
+                                                        <img th:src="${evo.uImg}"  th:alt="${evo.uName}">
+                                                        </div>
+                                                    </a>
+                                                    <div class="content-box">
+                                                        <div class="user-info clearfix">
+                                                            <a href="#" class="username"th:text="${evo.uName}">DoDo607</a>
+                                                            <!--<div class="star-box">-->
+                                                                <!--<i class="icon-star2 active"></i>-->
+                                                                <!--<i class="icon-star2 active"></i>-->
+                                                                <!--<i class="icon-star2 active"></i>-->
+                                                                <!--<i class="icon-star2"></i>-->
+                                                                <!--<i class="icon-star2"></i>-->
+                                                                <!--<span>6分</span>-->
+                                                            <!--</div>-->
+                                                            <span th:text="${evo.score}+'分'"></span>
+                                                        </div><!--user-info end-->
+                                                        <p class="content" th:text="${evo.text}">这门课程非常好。尤其是对入门了 react 的同学。是技术的巩固和提升。</p>
+                                                        <div class="info clearfix">
+                                                            <div class="actions l">
+                                                                <a title="赞" href="javascript:;" class="js-pl-praise moco-btn moco-btn-gray-l" data-id="135392">
+                                                                    <span class="icon-thumb-revert  "></span>
+                                                                    <em>0</em>
+                                                                </a>
+                                                            </div>
+                                                            <span class="time r" th:text="${commons.fmtdate(evo.CTime)}">时间：2019-01-10</span>
+                                                        </div>
+                                                    </div><!--content end-->
+                                                </div><!--evaluation-con end-->
 
-                                                                        <button class="r moco-btn moco-btn-red preview-btn" th:data-id="${material.mId}" onclick="course_video(this.getAttribute('data-id'))" href="javascript:;">开始学习</button>
-                                                                <button class="r moco-btn moco-btn-red preview-btn" th:data-id="${material.mId}" onclick="course_answer(this.getAttribute('data-id'))" href="javascript:;">进行测试</button>
-                                                                        
-                                </a>
-                                                    </li>
-                                                <li data-media-id="18407">
-                                                            <a href="#" class="J-media-item">
-                                    <i class="imv2-play_circle type"></i>
-                                    1-2 搭建Taro环境 
-                                                                            (26:59)
-                                                                        
-                                                                        <button class="r moco-btn moco-btn-red preview-btn"  >开始学习</button>
-                                                                        
-                                </a>
-                                                    </li>
-                                            </ul>
-                                        <!-- 章节小节 end -->
                 </div>
 
                          

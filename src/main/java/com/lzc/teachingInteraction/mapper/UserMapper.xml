@@ -89,5 +89,7 @@
     u_id, account, u_name, password, type, sex, state, cTime, onTime, headImg, detail, 
     remark
   </sql>
-
+  <select id="selectByType" resultMap="BaseResultMap">
+    select * from user where type=#{type}
+  </select>
 </mapper>

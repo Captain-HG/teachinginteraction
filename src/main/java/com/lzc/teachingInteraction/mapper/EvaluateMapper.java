@@ -7,4 +7,6 @@ import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 public interface EvaluateMapper extends IBaseMapper<Evaluate> {
+    /** 根据课程id查询所有的评价*/
+    List<Evaluate> selectAllByCId(String cId);
 }

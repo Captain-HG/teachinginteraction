@@ -174,5 +174,10 @@ public class TestController {
         model.addAttribute("mmp",s);
         return "test01";
     }
+
+    @RequestMapping("test04")
+    public String test04(){
+        return "test04";
+    }
 }
 

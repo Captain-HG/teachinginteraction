@@ -24,19 +24,19 @@
 		<div class="test_main">
 			<div class="nr_left">
 				<div class="test">
-					<form action="" method="post">
+					<form action="course-answer" method="post">
 						<div class="test_title">
 							<p class="test_time">
 								<i class="icon iconfont">&#xe6fb;</i><b class="alt-1">01:40</b>
 							</p>
-							<font><input type="button" name="test_jiaojuan" value="交卷"></font>
+							<font><input type="button" name="test_jiaojuan" value="交卷" onclick="submitPage()"></font>
 						</div>
 						
 							<div class="test_content">
 								<div class="test_content_title">
 									<h2>单选题</h2>
 									<p>
-										<span>共</span><i class="content_lit" th:text="${subjectList.size()}"></i><span>题，</span><span>合计</span><i class="content_fs" th:text="${subjectList.size()}"></i><span>分</span>
+										<span>共</span><i class="content_lit" th:text="${subjectList.size()}" th:value="${subjectList.size()}" id="subjectListSize"></i><span>题，</span><span>合计</span><i class="content_fs" th:text="${subjectList.size()}"></i><span>分</span>
 									</p>
 								</div>
 							</div>
@@ -54,7 +54,7 @@
 														<li class="option">
 															
 																<input type="radio" class="radioOrCheck" th:name="'answer'+${interStat.index}"
-																	th:id="${sub.subId}+'A'"
+																	th:id="${sub.subId}+'A'" value="0"
 																/>
 															
 															
@@ -67,7 +67,7 @@
 														<li class="option">
 															
 																<input type="radio" class="radioOrCheck" th:name="'answer'+${interStat.index}"
-																	   th:id="${sub.subId}+'B'"
+																	   th:id="${sub.subId}+'B'" value="1"
 																/>
 															
 															
@@ -80,7 +80,7 @@
 														<li class="option">
 															
 																<input type="radio" class="radioOrCheck" th:name="'answer'+${interStat.index}"
-																	   th:id="${sub.subId}+'C'"
+																	   th:id="${sub.subId}+'C'" value="2"
 																/>
 															
 															
@@ -92,14 +92,14 @@
 													
 														<li class="option">
 															
-																<input type="radio" class="radioOrCheck" th:name="'answer'+${interStat.index}"
-																	   th:id="${sub.subId}+'D'"
+																<input type="radio" class="radioOrCheck"th:name="'answer'+${interStat.index}"
+																	   th:id="${sub.subId}+'D'" value="3"
 																/>
 															
 															
 															<label th:for="${sub.subId}+'D'">
 																D.
-																<p class="ue" style="display: inline;" th:text="${sub.optionC}">后台启动流程推进</p>
+																<p class="ue" style="display: inline;" th:text="${sub.optionD}">后台启动流程推进</p>
 															</label>
 														</li>
 													
@@ -138,9 +138,9 @@
 									</p>
 								</div>
 								<div class="rt_content_nr answerSheet">
-									<ul th:each="sub, interStat : ${subjectList}">
+									<ul >
 										
-											<li><a th:href="'#'+${interStat.index}">1</a></li>
+											<li th:each="sub, interStat : ${subjectList}"><a th:href="'#'+${interStat.index}" th:text="${interStat.index+1}"></a></li>
 									</ul>
 								</div>
 							</div>
@@ -157,6 +157,7 @@
 	</div>
 
 	<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+	<!--<script src="js/jquery/jquery-2.2.4.min.js"></script>-->
 	<script src="course-answer/jquery.easy-pie-chart.js"></script>
 	<!--时间js-->
 	<script src="course-answer/time/jquery.countdown.js"></script>
@@ -191,6 +192,41 @@
 		});
 	</script>
 
+    <script type="text/javascript"  th:inline="javascript">
+	 function submitPage() {
+         /*<![CDATA[*/
+
+     //     var subSize = [[${subjectList.size()}]];
+     // alert("大小："+subSize)
+     // var array=new Array(subSize);
+		 var eId= [[${eId}]];
+		 alert(eId);
+         var list = [];
+         $('input:radio:checked').each(function(){
+          var checkValue = $(this).val();
+			 list.push(checkValue);
+			 alert("循环时的list:"+list);
+             // console.log($(this).val());　　// 选中框中的值
+         });
+         console.log("集合："+list);
+         $.ajax({
+             type: 'POST',
+             dataType: 'json',
+             url: 'course-answer?eId='+eId,
+             data:JSON.stringify(list),
+             contentType:"application/json",
+             success: function(data){
+                 console.log(data);
+
+             },
+             error:function(data) {
+                 console.log(data);
+             },
+         });
+     }
+
+     /*]]>*/
+    </script>
 
 </body>
 

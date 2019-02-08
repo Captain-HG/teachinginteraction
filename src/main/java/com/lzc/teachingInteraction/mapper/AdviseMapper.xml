@@ -10,6 +10,7 @@
     <result column="ad_name" jdbcType="VARCHAR" property="adName" />
     <result column="ad_email" jdbcType="VARCHAR" property="adEmail" />
     <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="message" jdbcType="VARCHAR" property="message" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <!--
@@ -79,7 +80,7 @@
     <!--
       WARNING - @mbg.generated
     -->
-    ad_id, user_id, ad_name, ad_email, remark
+    ad_id, user_id, ad_name, ad_email, remark, message
   </sql>
 
 </mapper>

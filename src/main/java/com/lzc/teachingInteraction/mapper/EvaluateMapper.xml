@@ -86,5 +86,7 @@
     -->
     e_id, m_id, t_id, exam_id, u_id, c_id, e_text, cTime, remark, type
   </sql>
-
+<select id="selectAllByCId" resultMap="BaseResultMap">
+  select * from evaluate where c_id=#{cId}
+</select>
 </mapper>
