@@ -92,4 +92,10 @@
   <select id="selectByType" resultMap="BaseResultMap">
     select * from user where type=#{type}
   </select>
+  <select id="selectByAccountAndPassword" resultMap="BaseResultMap">
+    select * from user where account=#{account} AND password=#{password}
+  </select>
+  <select id="selectByAccount" resultMap="BaseResultMap">
+    select * from user where account=#{account}
+  </select>
 </mapper>

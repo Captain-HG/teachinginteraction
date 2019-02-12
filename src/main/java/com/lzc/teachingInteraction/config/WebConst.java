@@ -11,4 +11,6 @@ public class WebConst {
     public static final Integer USER_TYPE_STUDENT=0;
     /**user为2，管理员*/
     public static final Integer USER_TYPE_ADNIN=2;
+    /** session名字*/
+    public static final String USER_SESSION="user";
 }

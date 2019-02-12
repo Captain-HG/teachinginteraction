@@ -179,5 +179,14 @@ public class TestController {
     public String test04(){
         return "test04";
     }
+
+    /**
+     * 测试shiro标签
+     * @return
+     */
+    @RequestMapping("testShiro")
+    public String testShiro(){
+        return "testShiro";
+    }
 }
 

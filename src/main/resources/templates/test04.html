@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function openmydoc(path) {
+            var doc = new ActiveXObject("Word.Application");
+            doc.visible = true;
+            doc.Documents.Open(path);
+        }
+    </script>
+</head>
+<body>
+
+<a onclick="openmydoc('D:\\word\\go.doc');" type="activxobject(word.application)">
+    点击我！！！打开word文档，而不是下载
+</a>
+</body>
+</html>

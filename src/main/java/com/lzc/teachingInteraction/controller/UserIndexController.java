@@ -12,6 +12,14 @@ public class UserIndexController {
      * 首页
      * @return
      */
+    @RequestMapping("/")
+    public String Index(){
+        return "index/index";
+    }
+    /**
+     * 首页
+     * @return
+     */
     @RequestMapping("index.html")
     public String userIndex(){
         return "index/index";

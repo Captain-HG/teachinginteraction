@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
 
 <head>
     <meta charset="UTF-8">
@@ -37,8 +38,11 @@
                             <div class="academy-logo">
                                 <a href="index.html"><img src="img/core-img/logo.png" alt=""></a>
                             </div>
-                            <div class="login-content">
-                                <a href="#">登入</a>/<a href="#">注册</a>
+                            <div class="login-content" shiro:guest="">
+                                <a  href="userLogin.html">登入</a>/<a href="#">注册</a>
+                            </div>
+                            <div class="login-content" shiro:user="">
+                               欢迎您， <span> <shiro:principal property="uName" /></span>/<a href="/logout">退出</a>
                             </div>
                         </div>
                     </div>

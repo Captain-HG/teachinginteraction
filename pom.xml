@@ -78,6 +78,24 @@
             <artifactId>commons-lang3</artifactId>
             <version>3.5</version>
         </dependency>
+        <!-- shiro-->
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-core</artifactId>
+            <version>1.2.2</version>
+        </dependency>
+        <!-- shiro权限控制框架 -->
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-spring</artifactId>
+            <version>1.4.0</version>
+        </dependency>
+        <!--shiro与thymeleaf-->
+        <dependency>
+            <groupId>com.github.theborakompanioni</groupId>
+            <artifactId>thymeleaf-extras-shiro</artifactId>
+            <version>2.0.0</version>
+        </dependency>
     </dependencies>
 
     <build>
