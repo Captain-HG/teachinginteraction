@@ -75,6 +75,7 @@ public class UserLoginController {
                 System.out.println("user:"+user);
 //                session.setAttribute(WebConst.USER_SESSION,user);
                 //登录成功
+                userService.setOntime(user);
                 return "success";
             } catch (UnknownAccountException e) {
                 //异常，账号不存在
@@ -87,7 +88,7 @@ public class UserLoginController {
             }
         }
         else {
-           return "账号或密码不能为空！！";
+           return "账号存在异常！！";
         }
 
     }

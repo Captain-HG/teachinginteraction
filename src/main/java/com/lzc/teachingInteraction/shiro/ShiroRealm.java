@@ -1,7 +1,10 @@
 package com.lzc.teachingInteraction.shiro;
 
 
+import com.lzc.teachingInteraction.config.WebConst;
 import com.lzc.teachingInteraction.entity.User;
+import com.lzc.teachingInteraction.service.AdminService;
+import com.lzc.teachingInteraction.service.TeacherService;
 import com.lzc.teachingInteraction.service.UserService;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
@@ -19,6 +22,10 @@ import org.springframework.context.annotation.Lazy;
 public class ShiroRealm extends AuthorizingRealm {
     @Autowired
     UserService userService;
+    @Autowired
+    AdminService adminService;
+    @Autowired
+    TeacherService teacherService;
     /**
      *执行授权
      */
@@ -27,7 +34,20 @@ public class ShiroRealm extends AuthorizingRealm {
         System.out.println("shouquan");
         //进行授权，SimpleAuthorizationInfo为AuthorizationInfo的子类
       SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
+        Subject subject = SecurityUtils.getSubject();
+        User user = (User)subject.getPrincipal();
+        //判断管理员身份
+        if(user.getType()==2&&adminService.isExtis(user.getuId()))
+        {
+            System.out.println("admin");
+            info.addRole("admin");
+        }
 
+        if(user.getType()== WebConst.USER_TYPE_TEACHER &&teacherService.isExtis(user.getuId()))
+        {
+            System.out.println("老师");
+            info.addRole("teacher");
+        }
         return info;
     }
 

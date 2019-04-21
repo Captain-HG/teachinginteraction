@@ -54,6 +54,14 @@ spring:
         encoding: UTF-8
         cache: false
         cache-period: 0
+#    mail:
+#      host: smtp.qq.com
+#      protocol:  smtp
+#      default-encoding: UTF-8
+#      username: 1436899024@qq.com
+#      password: mthtzznifrgehghi
+#      test-connection: true
+
 
 ---
 server:
@@ -78,7 +86,14 @@ spring:
       enabled: false
   thymeleaf:
     cache: false
+  rabbitmq:
+    host: 192.168.134.128
+    port: 5672
+    username: guest
+    password: guest
+    publisher-confirms: true
 
 mybatis:
   type-aliases-package: com.lzc.teachingInteraction.entity
   mapper-locations: classpath:com.lzc.teachingInteraction.mapper/*.xml
+

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+<select name="type" id="typeId" class="select" onchange="addNewSelect()">
+    <option value="0" th:text="学生" selected></option>
+    <option value="1" th:text="老师" ></option>
+    <option value="2" th:text="管理员"}></option>
+</select>
+</div>
+<div id="test"><input  th:text="来了鬼"></div>
+<script type="text/javascript" src="admin/lib/jquery/1.9.1/jquery.min.js"></script>
+</body>
+<script type="text/javascript">
+    function addNewSelect() {
+        alert("选择方法");
+        var selected = $("#typeId").select().val();
+        alert(selected);
+        if (selected != 0) {
+            $("#test").style.display="none";
+            document.getElementById("test").style.display="none";
+
+        }
+    }
+</script>
+</html>

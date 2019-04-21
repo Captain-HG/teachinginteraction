@@ -89,4 +89,7 @@
 <select id="selectAllByCId" resultMap="BaseResultMap">
   select * from evaluate where c_id=#{cId}
 </select>
+  <select id="selectAllByUId" resultMap="BaseResultMap">
+  select * from evaluate where u_id=#{uId}
+</select>
 </mapper>

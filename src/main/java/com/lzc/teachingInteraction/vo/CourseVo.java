@@ -10,5 +10,7 @@ public class CourseVo {
     private String detail;//详细介绍
     private Integer ctime;//创建时间
     private String cLogourl;//课程头像
+    private int chance;//选择数(有多少学生选择学习)
+    private Byte state;//状态
 
 }

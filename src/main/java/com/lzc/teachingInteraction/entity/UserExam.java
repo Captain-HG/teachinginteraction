@@ -1,7 +1,9 @@
 package com.lzc.teachingInteraction.entity;
 
+import javax.persistence.Column;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.io.Serializable;
-import javax.persistence.*;
 
 @Table(name = "user_exam")
 public class UserExam implements Serializable {

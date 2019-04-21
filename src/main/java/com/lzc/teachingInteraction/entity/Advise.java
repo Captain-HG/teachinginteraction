@@ -21,6 +21,11 @@ public class Advise implements Serializable {
 
     private String message;
 
+    @Column(name = "cTime")
+    private Integer ctime;
+
+    private Byte state;
+
     private static final long serialVersionUID = 1L;
 
     /**
@@ -107,6 +112,34 @@ public class Advise implements Serializable {
         this.message = message;
     }
 
+    /**
+     * @return cTime
+     */
+    public Integer getCtime() {
+        return ctime;
+    }
+
+    /**
+     * @param ctime
+     */
+    public void setCtime(Integer ctime) {
+        this.ctime = ctime;
+    }
+
+    /**
+     * @return state
+     */
+    public Byte getState() {
+        return state;
+    }
+
+    /**
+     * @param state
+     */
+    public void setState(Byte state) {
+        this.state = state;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -119,6 +152,8 @@ public class Advise implements Serializable {
         sb.append(", adEmail=").append(adEmail);
         sb.append(", remark=").append(remark);
         sb.append(", message=").append(message);
+        sb.append(", ctime=").append(ctime);
+        sb.append(", state=").append(state);
         sb.append("]");
         return sb.toString();
     }

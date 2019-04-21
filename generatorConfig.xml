@@ -28,7 +28,7 @@
 
         <!-- jdbc 连接配置 -->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://192.168.134.1:3306/graduation?characterEncoding=utf-8"
+                        connectionURL="jdbc:mysql:///graduation?characterEncoding=utf-8"
                         userId="root"
                         password="123456">
         </jdbcConnection>
@@ -48,7 +48,10 @@
         <!-- <generatedKey column="id" sqlStatement="select SEQ_{1}.nextval from dual" identity="false" type="pre"/> -->
 
         <!-- tableName：数据库表名，domainObjectName：生成文件名 ，schema：数据源-->
+        <table tableName="raqueue" domainObjectName="RaQueue">
 
+        <!--<generatedKey column="c_id" sqlStatement="Mysql" identity="true" />-->
+        </table>
         <!--<table tableName="user" domainObjectName="User">-->
 
             <!--&lt;!&ndash;<generatedKey column="c_id" sqlStatement="Mysql" identity="true" />&ndash;&gt;-->
@@ -73,10 +76,10 @@
 
             <!--&lt;!&ndash;<generatedKey column="c_id" sqlStatement="Mysql" identity="true" />&ndash;&gt;-->
         <!--</table>-->
-        <table tableName="advise" domainObjectName="Advise">
+        <!--<table tableName="advise" domainObjectName="Advise">-->
 
-            <!--<generatedKey column="c_id" sqlStatement="Mysql" identity="true" />-->
-        </table>
+            <!--&lt;!&ndash;<generatedKey column="c_id" sqlStatement="Mysql" identity="true" />&ndash;&gt;-->
+        <!--</table>-->
         <!--<table tableName="notice" domainObjectName="Notice">-->
 
             <!--&lt;!&ndash;<generatedKey column="c_id" sqlStatement="Mysql" identity="true" />&ndash;&gt;-->
@@ -101,7 +104,7 @@
 
             <!--&lt;!&ndash;<generatedKey column="c_id" sqlStatement="Mysql" identity="true" />&ndash;&gt;-->
         <!--</table>-->
-        <!--<table tableName="course_student">-->
+        <!--<table tableName="course_user">-->
 
             <!--&lt;!&ndash;<generatedKey column="c_id" sqlStatement="Mysql" identity="true" />&ndash;&gt;-->
         <!--</table>-->

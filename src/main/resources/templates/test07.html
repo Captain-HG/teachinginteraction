@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        ul {
+            padding-right: 0px;
+            padding-left: 0px;
+            padding-bottom: 0px;
+            margin: 0px;
+            padding-top: 0px
+        }
+    </style>
+</head>
+<body>
+<div style="background: gray;color:#fff;border-radius: 8px;width: 300px;margin: 100px auto;">
+    <div id="scrollBody" style="height: 25px;line-height:25px;overflow-y:hidden;margin-left: 30px;text-align: center;">
+        <ul style="list-style: none;">
+            <li>《七律·长征》·毛泽东</li>
+            <li>红军不怕远征难，</li>
+            <li>万水千山只等闲。</li>
+            <li>五岭逶迤腾细浪，</li>
+            <li>乌蒙磅礴走泥丸。</li>
+            <li>金沙水拍云崖暖，</li>
+            <li>大渡桥横铁索寒。</li>
+            <li>更喜岷山千里雪，</li>
+            <li>三军过后尽开颜。</li>
+        </ul>
+        <br>
+    </div>
+    <img src="img/logo/notice.png" style="position: relative;width: 20px;float: left;top: -25px;left: 10px;" />
+</div>
+<script>
+    function $(id)
+    {
+        return document.getElementById(id);
+    }
+
+    var speed = 10;
+    var delay = 1500;
+    var timeout = 0;
+    function scroll()
+    {
+        if($('scrollBody').scrollTop == $('scrollBody').scrollHeight - 25)
+        {
+            $('scrollBody').scrollTop = 0;
+            $('scrollBody').scrollTop ++ ;
+            timeout = setTimeout('scroll()', delay);
+
+        }else if ($('scrollBody').scrollTop % 25 == 0)
+        {
+            $('scrollBody').scrollTop ++ ;
+            timeout = setTimeout('scroll()', delay);
+        }else
+        {
+            $('scrollBody').scrollTop ++ ;
+            timeout = setTimeout('scroll()', speed);
+        }
+    }
+    scroll();
+</script>
+</body>
+</html>

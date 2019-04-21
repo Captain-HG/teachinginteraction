@@ -7,4 +7,5 @@ import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 public interface AdminMapper extends IBaseMapper<Admin> {
-   }
+    Admin selectByUId(String uId);
+}

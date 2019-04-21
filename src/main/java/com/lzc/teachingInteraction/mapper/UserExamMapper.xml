@@ -80,6 +80,16 @@
     -->
     u_id, exam_id, result_score, cTime
   </sql>
-
-
+<select id="selectAllByEId" resultMap="BaseResultMap">
+  select * from user_exam where exam_id=#{eId}
+</select>
+  <select id="selectAllByUId" resultMap="BaseResultMap">
+  select * from user_exam where u_id=#{uId}
+</select>
+  <select id="selectByUIdAndEId" resultMap="BaseResultMap">
+  select * from user_exam where u_id=#{uId} and exam_id=#{eId}
+</select>
+  <delete id="delByUIdAndEId">
+    delete from user_exam where u_id=#{uId} and exam_id=#{eId}
+  </delete>
 </mapper>

@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+       
+    <meta charset="UTF-8">
+        <title>My WebSocket</title>
+       
+    <style>
+                #message {
+            margin-top: 40px;
+            border: 1px solid gray;
+            padding: 20px;
+        }
+
+            </style>
+</head>
+<body onload="conectWebSocket()" onunload="closeWebSocket()">
+昵称：<input type="text"  th:value="${uName}" id="nameId">
+<input type="hidden" th:value="${uId}" id="userId">
+<hr/>
+<br/>
+消息：<input id="text" type="text"/>
+<input id="toUser" type="hidden" th:value="${toUId}" />
+<input id="queueNmae" type="hidden" th:value="${toUId}" />
+<button onclick="send()">发送消息</button>
+<div id="message">
+    <span th:text="${msg}"></span>
+</div>
+</body>
+<script th:src="@{../js/jquery/jquery-2.2.4.min.js}"></script>
+<script type="text/javascript">
+    var websocket = null;
+
+    function conectWebSocket() {
+        //判断当前浏览器是否支持WebSocket
+        alert($("#userId").val());
+        if ('WebSocket' in window) {
+            websocket = new WebSocket("ws://localhost:8001/websocket/"+$("#userId").val());
+        } else {
+            alert('Not support websocket')
+        }
+        //连接发生错误的回调方法
+        websocket.onerror = function () {
+            setMessageInnerHTML("error");
+        };
+        //连接成功建立的回调方法
+        websocket.onopen = function (event) {
+            setMessageInnerHTML("Loc MSG: 成功建立连接");
+        }
+        //接收到消息的回调方法
+        websocket.onmessage = function (event) {
+            setMessageInnerHTML(event.data);
+        }
+        //连接关闭的回调方法
+        websocket.onclose = function () {
+            setMessageInnerHTML("Loc MSG:关闭连接");
+        }
+        //监听窗口关闭事件，当窗口关闭时，主动去关闭websocket连接，防止连接还没断开就关闭窗口，server端会抛异常。
+        window.onbeforeunload = function () {
+            websocket.close();
+        }
+    }
+
+    //将消息显示在网页上
+    function setMessageInnerHTML(innerHTML) {
+        document.getElementById('message').innerHTML += innerHTML + '<br/>';
+    }
+
+    //关闭连接
+    function closeWebSocket() {
+        websocket.close();
+    }
+
+    //发送消息
+    function send() {
+        var message = document.getElementById('text').value;
+        var toUser = document.getElementById('toUser').value;
+        var socketMsg = {msg:message,toUser:toUser};
+        if(toUser == ''){
+            //群聊.
+            socketMsg.type = 0;
+        }else{
+            //单聊.
+            socketMsg.type = 1;
+        }
+        websocket.send(JSON.stringify(socketMsg));
+        $("#text").val("");
+    }
+</script>
+</html>

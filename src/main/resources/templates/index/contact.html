@@ -54,8 +54,8 @@
                                 <a  href="userLogin.html">登入</a>/<a href="#">注册</a>
                             </div>
                             <div class="login-content" shiro:user="">
-                                欢迎您， <span> <shiro:principal property="uName" /></span>/<a href="/logout">退出</a>
-                            </div>
+                                欢迎您， <u onclick="userCenter()"> <shiro:principal property="uName" /></u>/<a href="/logout">退出</a>
+                        </div>
                         </div>
                     </div>
                 </div>
@@ -88,7 +88,7 @@
                                     <li><a href="index.html">首页</a></li>
 
                                     <li><a href="about-us.html">关于我们</a></li>
-                                    <li><a href="course.html">课程</a></li>
+                                    <li><a href="course-list.html">课程</a></li>
                                     <li><a href="contact.html">联系我们</a></li>
 
                                 </ul>
@@ -99,7 +99,7 @@
                         <!-- Calling Info -->
                         <div class="calling-info">
                             <div class="call-center">
-                                <a href="tel:+654563325568889"><i class="icon-telephone-2"></i> <span>(+65) 456 332 5568 889</span></a>
+                                <a href="#"><i class="icon-telephone-2"></i> <span>188 1561 1695</span></a>
                             </div>
                         </div>
                     </nav>
@@ -180,11 +180,11 @@
                             <!-- Contact Form Area -->
                             <div class="col-12 col-lg-7">
                                 <div class="contact-form-area wow fadeInUp" data-wow-delay="500ms">
-                                    <form action="" method="post">
-                                        <input type="text" class="form-control" id="name" placeholder="ad_name">
-                                        <input type="email" class="form-control" id="email" placeholder="ad_email">
-                                        <textarea name="message" class="form-control" id="message" cols="30" rows="10" placeholder="Message"></textarea>
-                                        <button class="btn academy-btn mt-30" type="submit">Contact Us</button>
+                                    <form  id="formId" method="post" action="send-advise">
+                                        <input type="text" class="form-control" id="adName" name="adName" placeholder="主题">
+                                        <input type="email" class="form-control" id="adEmail" name="adEmail" placeholder="您的email,方便我们联系您">
+                                        <textarea name="message" class="form-control" id="message"  cols="30" rows="10" placeholder="建议信息"></textarea>
+                                        <input  id="submitId" class="btn academy-btn mt-30" type="submit"  value="提交" />
                                     </form>
                                 </div>
                             </div>
@@ -220,9 +220,9 @@
                             </div>
                             <nav>
                                 <ul class="useful-links">
-                                    <li><a href="#">主页</a></li>
-                                    <li><a href="#">关于我们</a></li>
-                                    <li><a href="#">课程</a></li>
+                                    <li><a href="index.html">主页</a></li>
+                                    <li><a href="about-us.html">关于我们</a></li>
+                                    <li><a href="course-list.html">课程</a></li>
 
                                 </ul>
                             </nav>
@@ -283,7 +283,66 @@
     <!-- Active js -->
     <script src="js/active.js"></script>
     <script src="js/baidu-map/baidu-map.js"></script>
+    <script type="text/javascript" src="admin/lib/jquery.validation/1.14.0/jquery.validate.js"></script>
+    <script type="text/javascript" src="admin/lib/jquery.validation/1.14.0/validate-methods.js"></script>
+    <script type="text/javascript" src="admin/lib/jquery.validation/1.14.0/messages_zh.js"></script>
+    <script type="text/javascript">
+        function userCenter() {
+            $.ajax({
+                url: 'user-center-index.html',
+                success: function (data) {
+                    if (data!=null){
+                        window.location.href=data;
+                    }else {
+                        alert("未知错误");
+                    }
+                }
 
+            });
+
+        }
+    </script>
+    <script type="text/javascript">
+
+            $("#formId").validate({
+                rules:{
+                    adName  :{
+                        required:true,
+                        minlength:4,
+                        maxlength:30
+                    },
+                    adEmail:{
+                        required:true,
+                        email :true
+                    },
+                    message:{
+                        required:true
+                    },
+                },
+                onkeyup:false,
+                focusCleanup:true,
+                success:"valid",
+                submitHandler:function(form){
+                    $.ajax({
+                        url:"send-advise",
+                        type :"post",
+                        data: $('#formId').serialize(),
+                        success: function (data) {
+                            alert(data);
+                            if (data=="success"){
+                               alert("提交成功");
+                               window.location.href="contact.html";
+                            }
+                            else {
+                                alert("提交出错，请重试");
+                                location.reload();
+                            }
+                        }
+
+                    });
+                }
+            });
+    </script>
 </body>
 
 </html>

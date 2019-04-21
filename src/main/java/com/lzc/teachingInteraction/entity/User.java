@@ -8,7 +8,7 @@ public class User implements Serializable {
     @Column(name = "u_id")
     private String uId;
 
-    private Integer account;
+    private String account;
 
     @Column(name = "u_name")
     private String uName;
@@ -53,14 +53,14 @@ public class User implements Serializable {
     /**
      * @return account
      */
-    public Integer getAccount() {
+    public String getAccount() {
         return account;
     }
 
     /**
      * @param account
      */
-    public void setAccount(Integer account) {
+    public void setAccount(String account) {
         this.account = account;
     }
 

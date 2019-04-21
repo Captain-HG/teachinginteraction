@@ -72,13 +72,14 @@ var hasLearn;
 
         </div>
         <div class="hd clearfix">
-            <h2 class="l" th:text="${course.cName}">首页</h2>
-                    </div>
+            <h2 class="l" th:text="${course.cName}"></h2><br>
+
+    </div>
 
         <div class="statics clearfix">
                         <div class="teacher-info l">
             <a href="#" target="_blank">
-                <img data-userid="7376453" class="js-usercard-dialog" src="course_files/5b8cf0be0001b57902000200-80-80.jpg" width="80" height="80">
+                <img data-userid="7376453" class="js-usercard-dialog" th:src="${user.headimg}" width="80" height="80">
             </a>
             <span class="tit">
                 <a href="#" target="_blank" th:text="${user.uName}"></a><i class="icon-imooc"></i>
@@ -87,29 +88,19 @@ var hasLearn;
                         <div class="teacher-course">
                 <div class="teacher-course-arrow"><span></span></div>
                 <div class="teacher-course-title">
-                    <a href="#" class="r">查看讲师更多课程 <i class="imv2-arrow2_r"></i></a>
-                    水若寒宇讲师的其他课程
+                    <a th:href="'teacher-showCourse-list.html?tId='+${tId}" class="r">查看讲师更多课程 </a><br>
+                    <a th:href="'user-chat.html?tId='+${tId}" class="r">和老师聊天对话 </a>
+                    <span th:text="${user.uName}"></span>讲师的其他课程
                 </div>
                 <div class="teacher-course-list recom-course-list-box">
                     <ul class="recom-course-list clearfix">
                                                 <li class="clearfix">
                                                         <a href="#" class="clearfix" target="_blank">
-                                <div class="l course-img" style="background-image: url(//img.mukewang.com/szimg/5c2212b30886a3e606000338-360-202.jpg);"></div>
-                                                        
+                                <div class="l course-img" th:style="'background-image: url('+${course.cLogourl}+');'"></div>
+
                             <div class="l content-box">
-                                <p class="smalle-title">掌握Taro多端框架 快速上手小程序/H5开发</p>
-                                <div class="clearfix learn-detail">实战<span>·</span>中级<span>·</span><i class="imv2-set-sns"></i>98</div>
-                                <div class="teacher-course-price">                                    <div class="clearfix">
-                                        
-                                                                        
-                                                            ￥266.00
-                                            
-                                            
-                                                                        
-    </div>
-       
-                                
-                                </div>
+                                <p class="smalle-title" th:text="${course.cName}"></p>
+
                             </div>
                             </a>
                         </li>
@@ -125,7 +116,7 @@ var hasLearn;
                 <span class="meta">时长</span><span class="meta-value"> 4小时11分</span>
             </div>
             <div class="static-item l">
-                <span class="meta">学习人数</span><span class="meta-value js-learn-num">4849</span>
+                <span class="meta" >学习人数</span><span class="meta-value js-learn-num" th:text="${course.chance}">4849</span>
             </div>
             <div class="static-item l score-btn">
                 <span class="meta">综合评分</span><span class="meta-value">9.3</span>
@@ -157,7 +148,10 @@ var hasLearn;
                 </div>
                 
             </div>
-            
+            <div class="static-item l">
+                <u id="existId" onclick="changeLike()" th:value="${exist}" th:text="${exist}" style="font-size:3;color: #ffe4c4"></u>
+
+            </div>
         </div>
    
 
@@ -207,26 +201,17 @@ var hasLearn;
                                         <ul class="video">
                                                 <li data-media-id="18406" th:each="material, interStat : ${materialList}">
                                                             <a href="#" class="J-media-item"  >
-                                    <i class="imv2-play_circle type"></i>
-                                                           <span th:text="${material.mName}" ></span>
 
-                                                                        <button class="r moco-btn moco-btn-red preview-btn" th:data-id="${material.mId}" onclick="course_video(this.getAttribute('data-id'))" href="javascript:;">开始学习</button>
-                                                                <button class="r moco-btn moco-btn-red preview-btn" th:data-id="${material.mId}" onclick="course_answer(this.getAttribute('data-id'))" href="javascript:;">进行测试</button>
-                                                                        
+                                                           <span th:text="${material.mName}" ></span>
+                                                                <button class="r moco-btn moco-btn-red preview-btn"  th:data-id="${material.mId}" onclick="disp_prompt(this.getAttribute('data-id'))" href="javascript:;">进行评价</button>
+                                                                        <button class="r moco-btn moco-btn-red preview-btn" th:if="${material.mType eq 'mp4'}" th:data-id="${material.mId}" onclick="course_video(this.getAttribute('data-id'))" href="javascript:;">开始学习</button>
+                                                                <button class="r moco-btn moco-btn-red preview-btn"  th:data-id="${material.mId}" onclick="course_answer(this.getAttribute('data-id'))" href="javascript:;">进行测试</button>
+                                                                <button class="r moco-btn moco-btn-red preview-btn"  th:data-id="${material.mId}" onclick="material_down(this.getAttribute('data-id'))" href="javascript:;">下载资料</button>
                                 </a>
                                                     </li>
                                                 <li data-media-id="18407">
                                                             <a href="#" class="J-media-item">
-                                    <i class="imv2-play_circle type"></i>
-                                    1-2 搭建Taro环境 
-                                                                            (26:59)
-                                                                        
-                                                                        <button class="r moco-btn moco-btn-red preview-btn"  >开始学习</button>
-                                                                        
-                                </a>
-                                                    </li>
-                                            </ul>
-                                        <!-- 章节小节 end -->
+
                 </div>
 
                          
@@ -266,10 +251,27 @@ var hasLearn;
 
 
 </div>
-
+<script type="text/javascript" src="js/jquery/jquery-2.2.4.min.js"></script>
 <script type="text/javascript" th:inline="javascript">
-    function course_video(cId) {
-        window.location.href="course-video.html?cId="+cId;
+    function course_video(id) {
+        window.location.href="course-video.html?id="+id;
+    }
+    function material_down(mId) {
+        window.location.href="course-down?mId="+mId;
+    }
+    function  disp_prompt(id){
+        var text=prompt("输入的内容","");
+        var remark = prompt("评分", "");
+        if (text!=null&&remark!=null){
+            $.ajax({
+                url:'user-material-evaluate',
+                data:{"text":text,"remark":remark,"mId":id},
+                type:"post",
+                success:function (data) {
+                    alert(data);
+                }
+            });
+        }
     }
 </script>
 <script type="text/javascript" th:inline="javascript">
@@ -279,8 +281,31 @@ var hasLearn;
         window.location.href="course-answer.html?mId="+mId+"&cId="+cId;
     }
     /*]]>*/
+
 </script>
 
+<script type="text/javascript" >
+        /*<![CDATA[*/
+    function changeLike() {
+        var cId=[[${course.cId}]];
+        var exist = document.getElementById("existId").innerText;
+        $.ajax({
+            url: "user-courseLike",
+            data:{"cId":cId,"exist":exist},
+            success:function (data) {
+                alert(data);
+                 if (data=="重新登录"){
+                     window.location.href="/logout";
+                 }
+                 else {
+                    document.getElementById("existId").innerHTML = data;
+                 }
+            }
+
+        });
+    }
+    /*]]>*/
+</script>
 
 </body>
 </html>

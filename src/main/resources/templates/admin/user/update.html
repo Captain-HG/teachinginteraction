@@ -1,0 +1,240 @@
+<!--_meta 作为公共模版分离出去-->
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<head>
+	<meta charset="utf-8">
+	<meta name="renderer" content="webkit|ie-comp|ie-stand">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+	<meta http-equiv="Cache-Control" content="no-siteapp" />
+	<link rel="Bookmark" href="admin/favicon.ico" >
+	<link rel="Shortcut Icon" href="admin/favicon.ico" />
+	<!--[if lt IE 9]>
+	<script type="text/javascript" src="admin/lib/html5shiv.js"></script>
+	<script type="text/javascript" src="adminlib/respond.min.js"></script>
+	<![endif]-->
+	<link rel="stylesheet" type="text/css" href="admin/static/h-ui/css/H-ui.min.css" />
+	<link rel="stylesheet" type="text/css" href="admin/static/h-ui.admin/css/H-ui.admin.css" />
+	<link rel="stylesheet" type="text/css" href="admin/lib/Hui-iconfont/1.0.8/iconfont.css" />
+	<link rel="stylesheet" type="text/css" href="admin/static/h-ui.admin/skin/default/skin.css" id="skin" />
+	<link rel="stylesheet" type="text/css" href="admin/static/h-ui.admin/css/style.css" />
+	<!--[if IE 6]>
+	<script type="text/javascript" src="admin/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+	<script>DD_belatedPNG.fix('*');</script>
+	<![endif]-->
+	<!--/meta 作为公共模版分离出去-->
+
+	<title></title>
+	<meta name="keywords" >
+	<meta name="description" >
+</head>
+<body onload="addNewSelect()" >
+<article class="page-container">
+	<div class="Huiform">
+		<form class="form form-horizontal" id="form-article-add" enctype="multipart/form-data" action="admin-user-update" th:method="post">
+
+			<!--<div class="row cl">-->
+			<!--<label class="form-label col-xs-4 col-sm-2">举办的商家名：</label>-->
+			<!--<div class="formControls col-xs-5 col-sm-5">-->
+			<!--<input type="text" class="input-text" th:value="${activityVO.provide.pName}" placeholder="" id="pName" name="pName" >-->
+			<!--</div>-->
+			<!--</div>-->
+			<div class="row cl">
+				<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>姓名：</label>
+				<div class="formControls col-xs-8 col-sm-9" style="padding-right: 0px">
+				</div>
+				<div class="formControls col-xs-4 col-sm-9" style="padding-left: 0px">
+					<input type="text" class="input-text" placeholder="喜羊羊" name="uName" id="nameId" th:value="${user.uName}" />
+				</div>
+			</div>
+			<div class="row cl">
+				<label class="form-label col-xs-4 col-sm-2">账号（手机）：</label>
+				<div class="formControls col-xs-8 col-sm-9" style="padding-right: 0px">
+				</div>
+				<div class="formControls col-xs-4 col-sm-9" style="padding-left: 0px">
+					<input type="text" class="input-text" placeholder="199" name="account" id="accountId" th:value="${user.account}" onchange="ajaxRegister()" />
+				</div>
+			</div>
+
+			<div class="row cl">
+				<label class="form-label col-xs-4 col-sm-2">头像：</label>
+				<div class="formControls col-xs-8 col-sm-9" style="padding-right: 0px">
+				</div>
+				<div class="formControls col-xs-4 col-sm-9" style="padding-left: 0px">
+					<input type="file" class="input-text" placeholder="199" name="file1" id="headImgId" onchange="imgChange(this)" th:value="${user.headimg}"/>
+					<div id="preview">
+					<img id="imghead" th:src="${user.getHeadimg()}" width="130"height="90" /> <!--图片显示位置-->
+				</div>
+				</div>
+			</div>
+			<div class="row cl" shiro:hasRole="admin" >
+				<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>账号类别：</label>
+				<div class="formControls col-xs-8 col-sm-9"> <span class="select-box">
+				<select name="type" id="typeId" class="select" onchange="addNewSelect()">
+					<option value="0" th:text="学生" th:selected="${user.type eq 0}"></option>
+					<option value="1" th:text="老师" th:selected="${user.type eq 1}"></option>
+                    <option value="2" th:text="管理员" th:selected="${user.type eq 2}" ></option>
+				</select>
+				</span> </div>
+			</div>
+			<div class="row cl">
+				<label class="form-label col-xs-4 col-sm-2">来源学校：</label>
+				<div class="formControls col-xs-8 col-sm-9" style="padding-right: 0px">
+				</div>
+				<div class="formControls col-xs-4 col-sm-9" style="padding-left: 0px">
+					<input type="text" class="input-text" placeholder="14@qq.com" name="schoolName" id="schoolNameId" th:value="${schoolName}" />
+				</div>
+			</div>
+			<div class="row cl" id="gradeId">
+				<label class="form-label col-xs-4 col-sm-2">年级：</label>
+				<div class="formControls col-xs-8 col-sm-9" style="padding-right: 0px">
+				</div>
+				<div class="formControls col-xs-4 col-sm-9" style="padding-left: 0px">
+					<input type="text" class="input-text" placeholder="14@qq.com" name="grade" id="grade"  />
+				</div>
+			</div>
+			<div class="row cl" >
+				<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>性别：</label>
+				<div class="formControls col-xs-8 col-sm-9"> <span class="select-box">
+				<select name="sex" class="select">
+					<option value="0" th:text="女" th:selected="${user.sex eq 0}"></option>
+					<option value="1" th:text="男" th:selected="${user.sex eq 1}"></option>
+				</select>
+				</span> </div>
+			</div>
+			<div class="row cl">
+				<label class="form-label col-xs-4 col-sm-2">联系邮箱：</label>
+				<div class="formControls col-xs-8 col-sm-9" style="padding-right: 0px">
+				</div>
+				<div class="formControls col-xs-4 col-sm-9" style="padding-left: 0px">
+					<input type="text" class="input-text" placeholder="14@qq.com" name="remark" id="emailId" th:value="${user.remark}" />
+				</div>
+			</div>
+			<div class="row cl">
+				<label class="form-label col-xs-4 col-sm-2">用户简介：</label>
+				<div class="formControls col-xs-8 col-sm-9">
+					<textarea name="detail" id="detailId" th:text="${user.detail}" cols="" rows="" class="textarea"  placeholder="说点什么...最少输入5个字符" datatype="*10-100" dragonfly="true" nullmsg="备注不能为空！" onKeyUp="$.Huitextarealength(this,100)" ></textarea>
+					<!--<p class="textarea-numberbar"><em class="textarea-length">0</em>/200</p>-->
+				</div>
+			</div>
+			<div><input type="text" th:value="${user.uId}" name="uId" id="idId" hidden="true"></div>
+			<div class="row cl">
+				<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+					<button  class="btn btn-primary radius" type="submit" id="btn-edit"><i class="Hui-iconfont">&#xe632;</i> 提交待审核</button>
+
+				</div>
+			</div>
+		</form>
+	</div>
+</article>
+
+<!--_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="admin/lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="admin/lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="admin/static/h-ui/js/H-ui.min.js"></script>
+<script type="text/javascript" src="admin/static/h-ui.admin/js/H-ui.admin.js"></script> <!--/_footer /作为公共模版分离出去-->
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="admin/lib/My97DatePicker/4.8/WdatePicker.js"></script>
+<script type="text/javascript" src="admin/lib/jquery.validation/1.14.0/jquery.validate.js"></script>
+<script type="text/javascript" src="admin/lib/jquery.validation/1.14.0/validate-methods.js"></script>
+<script type="text/javascript" src="admin/lib/jquery.validation/1.14.0/messages_zh.js"></script>
+<script type="text/javascript" src="admin/lib/webuploader/0.1.5/webuploader.min.js"></script>
+<script type="text/javascript" src="admin/lib/ueditor/1.4.3/ueditor.config.js"></script>
+<script type="text/javascript" src="admin/lib/ueditor/1.4.3/ueditor.all.min.js"> </script>
+<script type="text/javascript" src="admin/lib/ueditor/1.4.3/lang/zh-cn/zh-cn.js"></script>
+
+<script type="text/javascript" th:inline="javascript">
+    var fys="error";
+    function imgChange(obj) {
+//获取点击的文本框
+        var file =document.getElementById("headImgId");
+        var imgUrl =window.URL.createObjectURL(file.files[0]);
+        var img =document.getElementById('imghead');
+        img.setAttribute('src',imgUrl); // 修改img标签src属性值
+    };
+    function addNewSelect() {
+        var selected = $("#typeId").select().val();
+        if (selected != 0) {
+            document.getElementById("gradeId").style.display = "none";
+        }
+        else {
+            document.getElementById("gradeId").style.display = "";
+        }
+    }
+        function ajaxRegister() {
+            var account = $("#accountId").val();
+            var id = $("#idId").val();
+            // alert("账号" + account + "id" + id);
+            $.ajax({
+                url: "admin-user-accountAjaxRegister",
+                data: {"account": account, "id": id},
+                success: function (str) {
+                    if ("true" == str) {
+                        fys = "true";
+                        //账号未存在
+
+                    }
+                    else {
+
+                        //帐号已经被注册
+                        alert(str);
+                        fys = "error";
+                    }
+                }
+            });
+        }
+
+        $('.skin-minimal input').iCheck({
+            checkboxClass: 'icheckbox-blue',
+            radioClass: 'iradio-blue',
+            increaseArea: '20%'
+        });
+
+        $("#form-article-add").validate({
+            rules: {
+                uName: {
+                    required: true,
+                    minlength: 2,
+                    maxlength: 7
+                },
+                account: {
+                    required: true,
+                    isPhone: true
+                },
+                remark: {
+                    email: true
+                },
+                schoolName: {
+                    required: true,
+                    minlength: 6,
+                    maxlength: 16
+                },
+
+            },
+            onkeyup: false,
+            focusCleanup: true,
+            success: "valid",
+            submitHandler: function (form) {
+                ajaxRegister();
+                alert("更新完成");
+                if (fys == "true") {
+                    $("form").ajaxSubmit(function (data) {
+                        var index = parent.layer.getFrameIndex(window.name);
+                        // parent.$('#btn-refresh').click();
+                        parent.location.reload();
+                        parent.layer.close(index);
+                    });
+                }
+                else {
+                    alert("确认信息");
+                    return false;
+                }
+            }
+        });
+
+</script>
+<!--/请在上方写此页面业务相关的脚本-->
+</body>
+</html>

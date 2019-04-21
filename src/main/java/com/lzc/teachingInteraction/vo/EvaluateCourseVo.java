@@ -16,5 +16,4 @@ public class EvaluateCourseVo {
     private String uName;//评论人的名字
     private String uImg;//评论人的头像
     private String score;//打的分
-
 }

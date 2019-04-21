@@ -9,7 +9,6 @@
 <meta name="keywords" content="">
 <link rel="stylesheet" type="text/css" href="course-video_files/video.css">
 <script src="course-video_files/jquery-3.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="course-video_files/sjhref.js"></script>
 
 <style type="text/css">
 .outsitepanel {display: none !important; }
@@ -60,51 +59,32 @@
                         <div class="video_bofang_mtbd">
                            <div id="scroll" class="scroll clearfix">
                               <ul class="mingdan" id="holder" style="margin-top: -12.2014px;">
-                                
-                                
-                                
-                              <li>热门：<script type="text/javascript">document.writeln(str1)</script><a href="https://blog.retechs.cn/">随机链接</a>
-</li>
-                                  <li>热门：<script type="text/javascript">document.writeln(str1)</script><a th:href="'course-down?mId='+${material.mId}">下载</a>
-</li>
 
+                              <li>热门：<script type="text/javascript">document.writeln(str1)</script><a th:href="'course-material-evaluate'+${material.cId}">评价</a>
+</li>
                                   <li>热门：<script type="text/javascript">document.writeln(str1)</script><a th:href="'course-down?mId='+${material.mId}">下载</a>
-                                  </li>
+</li>
                               </ul>
                             </div>
                     </div>
-                </div>  
+                </div>
+
                     <figcaption class="video_show_zs">
                         <div class="video_show_zj">
                             <img class="video_show_zj_img" src="course-video_files/name.jpg">
                             <p class="video_show_zj_js">
-                                <b class="video_show_zj_name">标题</b>
-                                <span class="video_show_zj_zc">描述</span>
+                                <b class="video_show_zj_name" th:text="${material.mName}">标题</b>
+                                <!--<span class="video_show_zj_zc">描述</span>-->
                             </p>
                         </div>
                         <span class="video_show_title">播放列表</span>
                         <ul class="video_show_con tab-menu">
-                             <li class="video_show_list">
-                                <a name="video1/video/name.mp4" data-title="你的名字" onclick="showTitle(this)"><img src="course-video_files/name.jpg"><span>你的名字<br><em><img src="course-video_files/bof.png">1.5万</em></span></a>
-                            </li>
-                            <li class="video_show_list">
-                                <a name="video1/video/name.mp4" data-title="你的名字" onclick="showTitle(this)"><img src="course-video_files/name.jpg"><span>你的名字<br><em><img src="course-video_files/bof.png">1.8万</em></span></a>
-                            </li>
-                            <li class="video_show_list">
-                                <a name="video1/video/name.mp4" data-title="你的名字" onclick="showTitle(this)"><img src="course-video_files/name.jpg"><span>你的名字<br><em><img src="course-video_files/bof.png">2.1万</em></span></a>
-                            </li>
-                            <li class="video_show_list">
-                                <a name="video1/video/txjg.mp4" data-title="天行九歌" onclick="showTitle(this)"><img src="course-video_files/txjg.jpg"><span>天行九歌<br><em><img src="course-video_files/bof.png">2.0万</em></span></a>
-                            </li>
-                            <li class="video_show_list">
-                                <a name="video1/video/txjg.mp4" data-title="天行九歌" onclick="showTitle(this)"><img src="course-video_files/txjg.jpg"><span>天行九歌<br><em><img src="course-video_files/bof.png">2.0万</em></span></a>
-                            </li>
-                            <li class="video_show_list">
-                                <a name="video1/video/txjg.mp4" data-title="天行九歌" onclick="showTitle(this)"><img src="course-video_files/txjg.jpg"><span>天行九歌<br><em><img src="course-video_files/bof.png">2.0万</em></span></a>
-                            </li>
-                            <li class="video_show_list">
-                                <a name="video1/video/txjg.mp4" data-title="天行九歌" onclick="showTitle(this)"><img src="course-video_files/txjg.jpg"><span>天行九歌<br><em><img src="course-video_files/bof.png">2.0万</em></span></a>
-                            </li>
+                             <li class="video_show_list" th:each="mt, interStat : ${materials}">
+                                <!--<a name="video1/video/name.mp4" data-title="你的名字" onclick="showTitle(this)"><img src="course-video_files/name.jpg"><span>你的名字<br><em><img src="course-video_files/bof.png">1.5万</em></span></a>-->
+                                 <a th:if="${mt.mType eq 'mp4'}" th:name="${mt.url}" th:title="${mt.mName}" onclick="showTitle(this)"><img src="course-video_files/name.jpg"><span ><span th:text="${mt.mName}">你的名字</span><br><em><img src="course-video_files/bof.png">1.5万</em></span></a>
+
+                             </li>
+
                         </ul>
                     </figcaption>
                 </figure>

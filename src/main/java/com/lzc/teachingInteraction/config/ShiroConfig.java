@@ -58,16 +58,17 @@ public class ShiroConfig {
         LinkedHashMap<String, String> filterChainDefinitionMap = new LinkedHashMap<>();
         //放行静态资源
         filterChainDefinitionMap.put("/static/**", "anon");
-//        filterChainDefinitionMap.put("/css/**", "anon");
-//        filterChainDefinitionMap.put("/js/**", "anon");
-//        filterChainDefinitionMap.put("/fonts/**", "anon");
-//        filterChainDefinitionMap.put("/img/**", "anon");
+        filterChainDefinitionMap.put("/css/**", "anon");
+        filterChainDefinitionMap.put("/js/**", "anon");
+        filterChainDefinitionMap.put("/fonts/**", "anon");
+        filterChainDefinitionMap.put("/img/**", "anon");
         filterChainDefinitionMap.put("/druid/**", "anon");
 //        filterChainDefinitionMap.put("/login-remember", "anon");
 //        filterChainDefinitionMap.put("/login-rememberUp", "anon");
         filterChainDefinitionMap.put("/logout", "logout");
         filterChainDefinitionMap.put("/loginSure", "anon");
-        filterChainDefinitionMap.put("/course.html", "authc");
+        filterChainDefinitionMap.put("/userRegister.html", "anon");
+        filterChainDefinitionMap.put("/**", "authc");
 //        filterChainDefinitionMap.put("/", "anon");
 
 //        filterChainDefinitionMap.put("/**", "user");

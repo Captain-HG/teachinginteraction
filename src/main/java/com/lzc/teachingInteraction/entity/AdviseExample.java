@@ -523,6 +523,126 @@ public class AdviseExample {
             addCriterion("message not between", value1, value2, "message");
             return (Criteria) this;
         }
+
+        public Criteria andCtimeIsNull() {
+            addCriterion("cTime is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCtimeIsNotNull() {
+            addCriterion("cTime is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCtimeEqualTo(Integer value) {
+            addCriterion("cTime =", value, "ctime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCtimeNotEqualTo(Integer value) {
+            addCriterion("cTime <>", value, "ctime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCtimeGreaterThan(Integer value) {
+            addCriterion("cTime >", value, "ctime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCtimeGreaterThanOrEqualTo(Integer value) {
+            addCriterion("cTime >=", value, "ctime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCtimeLessThan(Integer value) {
+            addCriterion("cTime <", value, "ctime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCtimeLessThanOrEqualTo(Integer value) {
+            addCriterion("cTime <=", value, "ctime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCtimeIn(List<Integer> values) {
+            addCriterion("cTime in", values, "ctime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCtimeNotIn(List<Integer> values) {
+            addCriterion("cTime not in", values, "ctime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCtimeBetween(Integer value1, Integer value2) {
+            addCriterion("cTime between", value1, value2, "ctime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCtimeNotBetween(Integer value1, Integer value2) {
+            addCriterion("cTime not between", value1, value2, "ctime");
+            return (Criteria) this;
+        }
+
+        public Criteria andStateIsNull() {
+            addCriterion("state is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andStateIsNotNull() {
+            addCriterion("state is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andStateEqualTo(Byte value) {
+            addCriterion("state =", value, "state");
+            return (Criteria) this;
+        }
+
+        public Criteria andStateNotEqualTo(Byte value) {
+            addCriterion("state <>", value, "state");
+            return (Criteria) this;
+        }
+
+        public Criteria andStateGreaterThan(Byte value) {
+            addCriterion("state >", value, "state");
+            return (Criteria) this;
+        }
+
+        public Criteria andStateGreaterThanOrEqualTo(Byte value) {
+            addCriterion("state >=", value, "state");
+            return (Criteria) this;
+        }
+
+        public Criteria andStateLessThan(Byte value) {
+            addCriterion("state <", value, "state");
+            return (Criteria) this;
+        }
+
+        public Criteria andStateLessThanOrEqualTo(Byte value) {
+            addCriterion("state <=", value, "state");
+            return (Criteria) this;
+        }
+
+        public Criteria andStateIn(List<Byte> values) {
+            addCriterion("state in", values, "state");
+            return (Criteria) this;
+        }
+
+        public Criteria andStateNotIn(List<Byte> values) {
+            addCriterion("state not in", values, "state");
+            return (Criteria) this;
+        }
+
+        public Criteria andStateBetween(Byte value1, Byte value2) {
+            addCriterion("state between", value1, value2, "state");
+            return (Criteria) this;
+        }
+
+        public Criteria andStateNotBetween(Byte value1, Byte value2) {
+            addCriterion("state not between", value1, value2, "state");
+            return (Criteria) this;
+        }
     }
 
     public static class Criteria extends GeneratedCriteria {

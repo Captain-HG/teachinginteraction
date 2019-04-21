@@ -13,6 +13,8 @@
     <result column="uTime" jdbcType="INTEGER" property="utime" />
     <result column="chance" jdbcType="INTEGER" property="chance" />
     <result column="c_logoUrl" jdbcType="VARCHAR" property="cLogourl" />
+    <result column="state" jdbcType="TINYINT" property="state" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <!--
@@ -82,7 +84,15 @@
     <!--
       WARNING - @mbg.generated
     -->
-    c_id, t_id, c_name, detail, cTime, uTime, chance, c_logoUrl
+    c_id, t_id, c_name, detail, cTime, uTime, chance, c_logoUrl, state, remark
   </sql>
-
+<select id="selectBytId" resultMap="BaseResultMap">
+  select * FROM course where t_id=#{tId}
+</select>
+  <select id="selectAllByStateYes" resultMap="BaseResultMap">
+  select * FROM course where state=1
+</select>
+  <select id="selectAllByTId" resultMap="BaseResultMap">
+select * FROM course where t_id=#{tId}
+  </select>
 </mapper>

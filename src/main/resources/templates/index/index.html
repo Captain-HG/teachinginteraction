@@ -39,10 +39,10 @@
                                 <a href="index.html"><img src="img/core-img/logo.png" alt=""></a>
                             </div>
                             <div class="login-content" shiro:guest="">
-                                <a  href="userLogin.html">登入</a>/<a href="#">注册</a>
+                                <a  href="userLogin.html">登入</a>/<a href="#">注册</a>u
                             </div>
                             <div class="login-content" shiro:user="">
-                               欢迎您， <span> <shiro:principal property="uName" /></span>/<a href="/logout">退出</a>
+                               欢迎您， <u onclick="userCenter()"> <shiro:principal property="uName" /></u>/<a href="/logout">退出</a>
                             </div>
                         </div>
                     </div>
@@ -75,7 +75,7 @@
                                 <ul>
                                     <li><a href="index.html">首页</a></li>
                                     <li><a href="about-us.html">关于我们</a></li>
-                                    <li><a href="course.html">课程</a></li>
+                                    <li><a href="course-list.html">课程</a></li>
                                     <li><a href="contact.html">联系我们</a></li>
 
                                 </ul>
@@ -86,7 +86,7 @@
                         <!-- Calling Info -->
                         <div class="calling-info">
                             <div class="call-center">
-                                <a href="tel:+654563325568889"><i class="icon-telephone-2"></i> <span>(+65) 456 332 5568 889</span></a>
+                                <a href="#"><i class="icon-telephone-2"></i> <span>188 1561 1695</span></a>
                             </div>
                         </div>
                     </nav>
@@ -108,7 +108,7 @@
                             <div class="hero-slides-content">
                                 <h4 data-animation="fadeInUp" data-delay="100ms">最新的所有课程</h4>
                                 <h2 data-animation="fadeInUp" data-delay="400ms">欢迎来到我们 <br>师生互动网课平台</h2>
-                                <a href="#" class="btn academy-btn" data-animation="fadeInUp" data-delay="700ms">获取更多</a>
+                                <!--<a href="#" class="btn academy-btn" data-animation="fadeInUp" data-delay="700ms">获取更多</a>-->
                             </div>
                         </div>
                     </div>
@@ -316,7 +316,7 @@
                                 <i class="fa fa-star-o" aria-hidden="true"></i>
                             </div>
                             <p>Java是一门面向对象编程语言，不仅吸收了C++语言的各种优点，还摒弃了C++里难以理解的多继承、指针等概念，因此Java语言具有功能强大和简单易用两个特征。</p>
-                            <a href="#" class="btn academy-btn btn-sm">了解更多</a>
+                            <a href="course-detail?cId=2" class="btn academy-btn btn-sm">了解更多</a>
                         </div>
                         <div class="popular-course-thumb bg-img" style="background-image: url(img/logo/javaLogo.jpg);"></div>
                     </div>
@@ -336,7 +336,7 @@
                                 <i class="fa fa-star-o" aria-hidden="true"></i>
                             </div>
                             <p>超文本标记语言，标准通用标记语言下的一个应用。 “超文本”就是指页面内可以包含图片、链接，甚至音乐、程序等非文字元素。</p>
-                            <a href="#" class="btn academy-btn btn-sm">了解更多</a>
+                            <a href="course-detail?cId=3" class="btn academy-btn btn-sm">了解更多</a>
                         </div>
                         <div class="popular-course-thumb bg-img" style="background-image: url(img/logo/htmlLogo.jpg);"></div>
                     </div>
@@ -356,7 +356,7 @@
                                 <i class="fa fa-star-o" aria-hidden="true"></i>
                             </div>
                             <p>PHP是一种通用开源脚本语言。语法吸收了C语言、Java和Perl的特点，利于学习，使用广泛，主要适用于Web开发领域。PHP 独特的语法混合了C、Java、Perl以及PHP自创的语法。它可以比CGI或者Perl更快速地执行动态网页。</p>
-                            <a href="#" class="btn academy-btn btn-sm">了解更多</a>
+                            <a href="course-detail?cId=4" class="btn academy-btn btn-sm">了解更多</a>
                         </div>
                         <div class="popular-course-thumb bg-img" style="background-image: url(img/logo/phpLogo.jpg);"></div>
                     </div>
@@ -376,7 +376,7 @@
                                 <i class="fa fa-star-o" aria-hidden="true"></i>
                             </div>
                             <p>Python是一种计算机程序设计语言。是一种动态的、面向对象的脚本语言，最初被设计用于编写自动化脚本(shell)，随着版本的不断更新和语言新功能的添加，越来越多被用于独立的、大型项目的开发。</p>
-                            <a href="#" class="btn academy-btn btn-sm">了解更多</a>
+                            <a href="course-detail?cId=5" class="btn academy-btn btn-sm">了解更多</a>
                         </div>
                         <div class="popular-course-thumb bg-img" style="background-image: url(img/logo/pythonLogo.jpg);"></div>
                     </div>
@@ -426,9 +426,9 @@
                             </div>
                             <nav>
                                 <ul class="useful-links">
-                                    <li><a href="#">主页</a></li>
-                                    <li><a href="#">关于我们</a></li>
-                                    <li><a href="#">课程</a></li>
+                                    <li><a href="index.html">主页</a></li>
+                                    <li><a href="about-us.html">关于我们</a></li>
+                                    <li><a href="course-list.html">课程</a></li>
 
                                 </ul>
                             </nav>
@@ -488,6 +488,22 @@
     <script src="js/plugins/plugins.js"></script>
     <!-- Active js -->
     <script src="js/active.js"></script>
+<script type="text/javascript">
+    function userCenter() {
+        $.ajax({
+            url: 'user-center-index.html',
+            success: function (data) {
+                if (data!=null){
+                    window.location.href=data;
+                }else {
+                    alert("未知错误");
+                }
+            }
+
+        });
+
+    }
+</script>
 </body>
 
 </html>

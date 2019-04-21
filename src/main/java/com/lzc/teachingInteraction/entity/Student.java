@@ -17,6 +17,8 @@ public class Student implements Serializable {
     @Column(name = "school_name")
     private String schoolName;
 
+    private Byte state;
+
     private static final long serialVersionUID = 1L;
 
     /**
@@ -75,6 +77,20 @@ public class Student implements Serializable {
         this.schoolName = schoolName;
     }
 
+    /**
+     * @return state
+     */
+    public Byte getState() {
+        return state;
+    }
+
+    /**
+     * @param state
+     */
+    public void setState(Byte state) {
+        this.state = state;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -85,6 +101,7 @@ public class Student implements Serializable {
         sb.append(", uId=").append(uId);
         sb.append(", sGrade=").append(sGrade);
         sb.append(", schoolName=").append(schoolName);
+        sb.append(", state=").append(state);
         sb.append("]");
         return sb.toString();
     }

@@ -9,6 +9,7 @@
     <result column="u_id" jdbcType="VARCHAR" property="uId" />
     <result column="s_grade" jdbcType="VARCHAR" property="sGrade" />
     <result column="school_name" jdbcType="VARCHAR" property="schoolName" />
+    <result column="state" jdbcType="TINYINT" property="state" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <!--
@@ -78,7 +79,9 @@
     <!--
       WARNING - @mbg.generated
     -->
-    s_id, u_id, s_grade, school_name
+    s_id, u_id, s_grade, school_name, state
   </sql>
-
+  <select id="selectByUId" resultMap="BaseResultMap">
+   select * from student where u_id=#{uId}
+ </select>
 </mapper>

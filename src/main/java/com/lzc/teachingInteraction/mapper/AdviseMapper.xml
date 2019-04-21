@@ -11,6 +11,8 @@
     <result column="ad_email" jdbcType="VARCHAR" property="adEmail" />
     <result column="remark" jdbcType="VARCHAR" property="remark" />
     <result column="message" jdbcType="VARCHAR" property="message" />
+    <result column="cTime" jdbcType="INTEGER" property="ctime" />
+    <result column="state" jdbcType="TINYINT" property="state" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <!--
@@ -80,7 +82,9 @@
     <!--
       WARNING - @mbg.generated
     -->
-    ad_id, user_id, ad_name, ad_email, remark, message
+    ad_id, user_id, ad_name, ad_email, remark, message, cTime, state
   </sql>
-
+<select id="selectAllByUId" resultMap="BaseResultMap">
+   select * from advise where user_id=#{uId}
+</select>
 </mapper>

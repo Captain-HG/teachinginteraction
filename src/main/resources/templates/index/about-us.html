@@ -42,8 +42,8 @@
                                 <a  href="userLogin.html">登入</a>/<a href="#">注册</a>
                             </div>
                             <div class="login-content" shiro:user="">
-                                欢迎您， <span> <shiro:principal property="uName" /></span>/<a href="/logout">退出</a>
-                            </div>
+                                欢迎您， <u onclick="userCenter()"> <shiro:principal property="uName" /></u>/<a href="/logout">退出</a>
+                        </div>
                         </div>
                     </div>
                 </div>
@@ -74,7 +74,7 @@
                                 <ul>
                                     <li><a href="index.html">首页</a></li>
                                     <li><a href="about-us.html">关于我们</a></li>
-                                    <li><a href="course.html">课程</a></li>
+                                    <li><a href="course-list.html">课程</a></li>
                                     <li><a href="contact.html">联系我们</a></li>
 
                                 </ul>
@@ -85,7 +85,7 @@
                         <!-- Calling Info -->
                         <div class="calling-info">
                             <div class="call-center">
-                                <a href="tel:+654563325568889"><i class="icon-telephone-2"></i> <span>(+65) 456 332 5568 889</span></a>
+                                <a href="#"><i class="icon-telephone-2"></i> <span>188 1561 1695</span></a>
                             </div>
                         </div>
                     </nav>
@@ -243,9 +243,9 @@
                             </div>
                             <nav>
                                 <ul class="useful-links">
-                                    <li><a href="#">主页</a></li>
-                                    <li><a href="#">关于我们</a></li>
-                                    <li><a href="#">课程</a></li>
+                                    <li><a href="index.html">主页</a></li>
+                                    <li><a href="about-us.html">关于我们</a></li>
+                                    <li><a href="course-list.html">课程</a></li>
 
                                 </ul>
                             </nav>
@@ -305,6 +305,22 @@
     <script src="js/plugins/plugins.js"></script>
     <!-- Active js -->
     <script src="js/active.js"></script>
+    <script type="text/javascript">
+        function userCenter() {
+            $.ajax({
+                url: 'user-center-index.html',
+                success: function (data) {
+                    if (data!=null){
+                        window.location.href=data;
+                    }else {
+                        alert("未知错误");
+                    }
+                }
+
+            });
+
+        }
+    </script>
 </body>
 
 </html>

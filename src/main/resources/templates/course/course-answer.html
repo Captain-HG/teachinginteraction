@@ -29,13 +29,18 @@
 							<p class="test_time">
 								<i class="icon iconfont">&#xe6fb;</i><b class="alt-1">01:40</b>
 							</p>
-							<font><input type="button" name="test_jiaojuan" value="交卷" onclick="submitPage()"></font>
+							<button  th:data-thing="${eId}" onclick="disp_prompt(this.getAttribute('data-thing'))" style="  background: #d57ea5;
+    background: -webkit-gradient(linear, left top, left bottom, from(#f4aacb), to(#e86ca4));
+    background: -moz-linear-gradient(top,  #f4aacb,  #e86ca4);
+    filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#f4aacb', endColorstr='#e86ca4');
+">评价</button>
+							<font><input id="but-from" type="button" name="test_jiaojuan" value="交卷" onclick="submitPage()"></font>
 						</div>
 						
 							<div class="test_content">
 								<div class="test_content_title">
 									<h2>单选题</h2>
-									<p>
+									<p id="subId">
 										<span>共</span><i class="content_lit" th:text="${subjectList.size()}" th:value="${subjectList.size()}" id="subjectListSize"></i><span>题，</span><span>合计</span><i class="content_fs" th:text="${subjectList.size()}"></i><span>分</span>
 									</p>
 								</div>
@@ -45,7 +50,7 @@
 									
 										<li th:id="${interStat.index}" >
 											<div class="test_content_nr_tt">
-												<i>1</i><span>(1分)</span><font th:text="${sub.subText}" >在生产管理信息系统中，下列操作步骤能正确将工单推进流程的是（  ）</font><b class="icon iconfont">&#xe881;</b>
+												<i th:text="${interStat.index}+1"></i><span>(1分)</span><font th:text="${sub.subText}" >在生产管理信息系统中，下列操作步骤能正确将工单推进流程的是（  ）</font><b class="icon iconfont">&#xe881;</b>
 											</div>
 
 											<div class="test_content_nr_main">
@@ -205,7 +210,7 @@
          $('input:radio:checked').each(function(){
           var checkValue = $(this).val();
 			 list.push(checkValue);
-			 alert("循环时的list:"+list);
+			 // alert("循环时的list:"+list);
              // console.log($(this).val());　　// 选中框中的值
          });
          console.log("集合："+list);
@@ -216,8 +221,14 @@
              data:JSON.stringify(list),
              contentType:"application/json",
              success: function(data){
-                 console.log(data);
 
+                 console.log(data);
+                 $.each(data,function () {
+                    $("#"+this).append("<span><font size='2' color='green'>正确</font></span>");
+                 });
+
+                 $("#subId").after("<span><font color='red'>最终得分:"+data.length+"</font></span>");
+				 $("#but-from").attr("style","display:none;");
              },
              error:function(data) {
                  console.log(data);
@@ -227,7 +238,21 @@
 
      /*]]>*/
     </script>
-
+	<script type="text/javascript">
+        function  disp_prompt(id){
+            var text=prompt("输入的内容","");
+            var remark = prompt("评分", "");
+            if (text!=null&&remark!=null){
+                $.ajax({
+                    url:'user-exam-evaluate',
+                    data:{"text":text,"remark":remark,"eId":id},
+                    success:function (data) {
+                        alert(data);
+                    }
+                });
+            }
+        }
+	</script>
 </body>
 
 </html>

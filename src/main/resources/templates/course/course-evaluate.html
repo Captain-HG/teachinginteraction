@@ -63,120 +63,115 @@ var hasLearn;
 
 <div id="main">
 
-<div class="course-infos">
-    <div class="w pr">
-        <div class="path">  
-            <a href="course-list.html">课程列表</a>
-                        <i class="path-split">\</i>
-                                  <a th:href="'course-detail?cId='+${course.cId}" th:text="${course.cName}"></a>
-                        <i class="path-split">\</i><a href="#"><span>评价</span></a>
-        </div>
-        <div class="hd clearfix">
-            <h2 class="l" th:text="${course.cName}">首页</h2>
-                    </div>
+    <div class="course-infos">
+        <div class="w pr">
+            <div class="path">
+                <a href="course-list.html">课程列表</a>
+                <i class="path-split">\</i>
+                <a href="#" th:text="${course.cName}"></a>
 
-        <div class="statics clearfix">
-                        <div class="teacher-info l">
-            <a href="#" target="_blank">
-                <img data-userid="7376453" class="js-usercard-dialog" src="course_files/5b8cf0be0001b57902000200-80-80.jpg" width="80" height="80">
-            </a>
-            <span class="tit">
+            </div>
+            <div class="hd clearfix">
+                <h2 class="l" th:text="${course.cName}"></h2><br>
+
+            </div>
+
+            <div class="statics clearfix">
+                <div class="teacher-info l">
+                    <a href="#" target="_blank">
+                        <img data-userid="7376453" class="js-usercard-dialog" th:src="${user.headimg}" width="80" height="80">
+                    </a>
+                    <span class="tit">
                 <a href="#" target="_blank" th:text="${user.uName}"></a><i class="icon-imooc"></i>
             </span>
-            <span class="job">老师</span>
-                        <div class="teacher-course">
-                <div class="teacher-course-arrow"><span></span></div>
-                <div class="teacher-course-title">
-                    <a href="#" class="r">查看讲师更多课程 <i class="imv2-arrow2_r"></i></a>
-                    水若寒宇讲师的其他课程
+                    <span class="job">老师</span>
+                    <div class="teacher-course">
+                        <div class="teacher-course-arrow"><span></span></div>
+                        <div class="teacher-course-title">
+                            <a th:href="'teacher-showCourse-list.html?tId='+${tId}" class="r">查看讲师更多课程 </a><br>
+                            <a th:href="'user-chat.html?tId='+${tId}" class="r">和老师聊天对话 </a>
+
+                            <span th:text="${user.uName}"></span>讲师的其他课程
+                        </div>
+                        <div class="teacher-course-list recom-course-list-box">
+                            <ul class="recom-course-list clearfix">
+                                <li class="clearfix">
+                                    <a href="#" class="clearfix" target="_blank">
+                                        <div class="l course-img" th:style="'background-image: url('+${course.cLogourl}+');'"></div>
+
+                                        <div class="l content-box">
+                                            <p class="smalle-title" th:text="${course.cName}"></p>
+
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <div class="teacher-course-list recom-course-list-box">
-                    <ul class="recom-course-list clearfix">
-                                                <li class="clearfix">
-                                                        <a href="#" class="clearfix" target="_blank">
-                                <div class="l course-img" style="background-image: url(//img.mukewang.com/szimg/5c2212b30886a3e606000338-360-202.jpg);"></div>
-                                                        
-                            <div class="l content-box">
-                                <p class="smalle-title">掌握Taro多端框架 快速上手小程序/H5开发</p>
-                                <div class="clearfix learn-detail">实战<span>·</span>中级<span>·</span><i class="imv2-set-sns"></i>98</div>
-                                <div class="teacher-course-price">                                    <div class="clearfix">
-                                        
-                                                                        
-                                                            ￥266.00
-                                            
-                                            
-                                                                        
-    </div>
-       
-                                
+
+                <div class="static-item l">
+                    <span class="meta">难度</span><span class="meta-value">中级</span>
+                </div>
+                <div class="static-item l">
+                    <span class="meta">时长</span><span class="meta-value"> 4小时11分</span>
+                </div>
+                <div class="static-item l">
+                    <span class="meta" >学习人数</span><span class="meta-value js-learn-num" th:text="${course.chance}">4849</span>
+                </div>
+                <div class="static-item l score-btn">
+                    <span class="meta">综合评分</span><span class="meta-value">9.3</span>
+
+
+                    <div class="score-wrap triangle">
+                        <div class="score-box">
+                            <a href="#" class="person-num">
+                                <span class="person-num l">8人评价</span>
+                            </a>
+                            <a href="#" class="evaluation-btn r">查看评价</a>
+                            <div class="score-detail-box">
+                                <div class="score-static-item">
+                                    <span class="meta-value">10.0</span>
+                                    <span class="meta">内容实用</span>
+                                </div>
+                                <div class="score-static-item">
+                                    <span class="meta-value">9.8</span>
+                                    <span class="meta">简洁易懂</span>
+                                </div>
+                                <div class="score-static-item">
+                                    <span class="meta-value">8.2</span>
+                                    <span class="meta">逻辑清晰</span>
                                 </div>
                             </div>
-                            </a>
-                        </li>
-                                           </ul>
-                </div>
-            </div>
-                    </div>
-                
-            <div class="static-item l">
-                <span class="meta">难度</span><span class="meta-value">中级</span>
-            </div>
-            <div class="static-item l">
-                <span class="meta">时长</span><span class="meta-value"> 4小时11分</span>
-            </div>
-            <div class="static-item l">
-                <span class="meta">学习人数</span><span class="meta-value js-learn-num">4849</span>
-            </div>
-            <div class="static-item l score-btn">
-                <span class="meta">综合评分</span><span class="meta-value">9.3</span>
-                
-
-                <div class="score-wrap triangle">
-                    <div class="score-box">
-                        <a href="#" class="person-num">
-                            <span class="person-num l">8人评价</span>
-                        </a>
-                                                    <a href="#" class="evaluation-btn r">查看评价</a>
-                                                <div class="score-detail-box">
-                            <div class="score-static-item">
-                                <span class="meta-value">10.0</span>
-                                <span class="meta">内容实用</span>
-                            </div>
-                            <div class="score-static-item">
-                                <span class="meta-value">9.8</span>
-                                <span class="meta">简洁易懂</span>
-                            </div>
-                            <div class="score-static-item">
-                                <span class="meta-value">8.2</span>
-                                <span class="meta">逻辑清晰</span>
-                            </div>
+                            <div class="icon-drop_down"></div>
                         </div>
-                        <div class="icon-drop_down"></div>
+
                     </div>
 
                 </div>
-                
+                <div class="static-item l">
+                    <span id="existId" onclick="changeLike()" th:value="${exist}" th:text="${exist}" style="font-size:3;color: #ffe4c4"></span>
+
+                </div>
             </div>
-            
+
+
+
+
         </div>
-   
-
- 
-
+        <div class="info-bg" id="js-info-bg">
+            <div class="cover-img-wrap">
+                <img data-src="//img.mukewang.com/5c0a367a0001cd1406000338.jpg" alt="" style="display: none" id="js-cover-img">
+            </div>
+            <div class="cover-mask"></div>
+            <canvas width="1349" height="200" class="cover-canvas" id="js-cover-canvas"></canvas></div>
     </div>
-    <div class="info-bg" id="js-info-bg">
-        <div class="cover-img-wrap">
-        <img data-src="//img.mukewang.com/5c0a367a0001cd1406000338.jpg" alt="" style="display: none" id="js-cover-img">
-        </div>
-        <div class="cover-mask"></div>
-    <canvas width="1349" height="200" class="cover-canvas" id="js-cover-canvas"></canvas></div>
-</div>
 <div class="course-info-menu ">
 	<div class="w">
 		<ul class="course-menu">
-			<li><a class="moco-change-big-btn active" id="learnOn" href="#">课程章节</a></li>
+			<li><a class="moco-change-big-btn " id="learnOn" th:href="'course-detail?cId='+${course.cId}">课程章节</a></li>
 
-			<li><span>8</span><a id="commentOn" class="moco-change-big-btn " href="#">用户评价</a></li>
+			<li><span>8</span><a id="commentOn" class="moco-change-big-btn active " href="#">用户评价</a></li>
 
 		</ul>
 	</div>
@@ -217,12 +212,7 @@ var hasLearn;
                                                         </div><!--user-info end-->
                                                         <p class="content" th:text="${evo.text}">这门课程非常好。尤其是对入门了 react 的同学。是技术的巩固和提升。</p>
                                                         <div class="info clearfix">
-                                                            <div class="actions l">
-                                                                <a title="赞" href="javascript:;" class="js-pl-praise moco-btn moco-btn-gray-l" data-id="135392">
-                                                                    <span class="icon-thumb-revert  "></span>
-                                                                    <em>0</em>
-                                                                </a>
-                                                            </div>
+
                                                             <span class="time r" th:text="${commons.fmtdate(evo.CTime)}">时间：2019-01-10</span>
                                                         </div>
                                                     </div><!--content end-->

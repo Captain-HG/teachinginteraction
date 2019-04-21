@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模态框</title>
+    <script src="js/jquery/jquery-1.12.4.js"></script>
+    <style>
+        html,body{
+            width: 100%;
+        }
+        #mask{
+            display: none;
+            border: 1px solid #000;
+            width: 50%;
+            height: 50%;
+            background-color: white;
+            border-radius: 5px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            z-index: 2;
+        }
+        #mask .delete{
+            font-size: 20px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: red;
+            cursor: pointer;
+        }
+        #mask .ensure{
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            cursor: pointer;
+        }
+        #panel{
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            opacity: 0.4;
+            filter: alpha(opacity: 40);
+            position: absolute;
+            left:0;
+            top:0;
+            display: none;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    姓名<div class="nameText">11</div>
+    年龄<div class="ageText">22</div>
+    <button class="change">修改信息</button>
+</div>
+<div id="mask">
+    <form action="">
+        姓名 <input type="text" class="name"><br>
+        年龄 <input type="text" class="age"><br>
+    </form>
+    <span class="delete">x</span>
+    <button class="ensure">确定</button>
+</div>
+<div id="panel"></div>
+<script>
+    $(function () {
+        $(".change").click(function (e) {
+            e.stopPropagation();
+            $("#panel").show();
+            $("#mask").show();
+            var $name = $(".box .nameText").text();
+            var $age = $(".box .ageText").text();
+            $("#mask .name").val($name);
+            $("#mask .age").val($age);
+            $("#mask .delete").click(function () {
+                $("#panel").hide();
+                $("#mask").hide();
+            })
+            $("#mask .ensure").click(function () {
+                $(".box .nameText").text($("#mask .name").val());
+                $(".box .ageText").text($("#mask .age").val());
+                $("#panel").hide();
+                $("#mask").hide();
+            })
+        })
+
+        //监听文档的点击
+//        $(document).click(function (e) {
+//            var $target = e.target;
+//            console.log(targetId);
+//
+//            if(targetId !== "mask") {
+//                $("#panel").hide();
+//                $("#mask").hide();
+//            }
+//        })
+    })
+</script>
+</body>
+</html>

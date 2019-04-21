@@ -27,6 +27,10 @@ public class Course implements Serializable {
     @Column(name = "c_logoUrl")
     private String cLogourl;
 
+    private Byte state;
+
+    private String remark;
+
     private static final long serialVersionUID = 1L;
 
     /**
@@ -141,6 +145,34 @@ public class Course implements Serializable {
         this.cLogourl = cLogourl;
     }
 
+    /**
+     * @return state
+     */
+    public Byte getState() {
+        return state;
+    }
+
+    /**
+     * @param state
+     */
+    public void setState(Byte state) {
+        this.state = state;
+    }
+
+    /**
+     * @return remark
+     */
+    public String getRemark() {
+        return remark;
+    }
+
+    /**
+     * @param remark
+     */
+    public void setRemark(String remark) {
+        this.remark = remark;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -155,6 +187,8 @@ public class Course implements Serializable {
         sb.append(", utime=").append(utime);
         sb.append(", chance=").append(chance);
         sb.append(", cLogourl=").append(cLogourl);
+        sb.append(", state=").append(state);
+        sb.append(", remark=").append(remark);
         sb.append("]");
         return sb.toString();
     }

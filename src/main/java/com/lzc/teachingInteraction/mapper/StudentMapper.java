@@ -7,4 +7,5 @@ import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 public interface StudentMapper extends IBaseMapper<Student> {
+    Student selectByUId(String uId);
 }

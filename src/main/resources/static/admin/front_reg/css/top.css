@@ -1,0 +1,59 @@
+.logintop{height:47px; position:absolute; top:0; background:url(../images/loginbg1.png) repeat-x;z-index:100; width:100%;}
+.logintop span{color:#fff; line-height:47px; background:url(../images/loginsj.png) no-repeat 21px 18px; text-indent:44px; color:#afc5d2; float:left;}
+.logintop ul{float:right; padding-right:30px;}
+.logintop ul li{float:left; margin-left:20px; line-height:47px;}
+.logintop ul li a{color:#afc5d2;}
+.logintop ul li a:hover{color:#fff;}
+.stat-blue {
+    background: #43A0F2;
+    border-radius: 10px;
+    -webkit-border-radius: 3px;
+    text-align: center;
+    color: #FFF;
+    padding: 20px 10px;
+    margin: 60px 70px;
+}
+
+.stat-blue:hover {
+    background: #0067c1;
+}
+
+.stat-Red {
+    background: #cd1d0f;
+    border-radius: 10px;
+    -webkit-border-radius: 3px;
+    text-align: center;
+    color: #FFF;
+    padding: 20px 10px;
+    margin: 60px 70px;
+}
+
+.stat-Red:hover {
+    background: #861007;
+}
+
+.cp_img_jian_btn {
+    border-radius: 4px;
+    background-color: #FEAE1B;
+    border-color: #FEAE1B;
+    color: #FFF;
+    font-weight: 300;
+    font-size: 16px;
+    font-family: "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    text-decoration: none;
+    text-align: center;
+    line-height: 30px;
+    height: 30px;
+    padding: 0 20px;
+    margin: 0;
+    display: inline-block;
+    cursor: pointer;
+    border: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition-property: all;
+    transition-property: all;
+    -webkit-transition-duration: .3s;
+    transition-duration: .3s;
+}
